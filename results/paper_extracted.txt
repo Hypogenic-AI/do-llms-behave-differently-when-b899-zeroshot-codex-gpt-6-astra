@@ -1,0 +1,1165 @@
+Style Is Not Authorship: Controlled Prompt Rewrites and Activation
+Interventions in a Language Model
+Autonomous research study
+Reproducible experimental report
+October 2026
+Abstract
+Does an assistant behave differently when a request looks
+machine-written? We distinguish actual authorship, perceived
+authorship, and surface style using controlled rewrites and
+fixed-text activation interventions in Qwen2.5-7B-Instruct. All
+requests are synthetic; the study tests human-like versus struc-
+tured machine-like wording, not genuine human provenance.
+We compare original requests, two conversational paraphrases,
+structured rewrites, and formal-prose controls across arithmetic
+accuracy, agreement with false arithmetic beliefs, and refusal
+of risky and benign requests.
+Directions learned on sepa-
+rate benign topics are contrasted with explicit authorship and
+evaluation-context directions, nuisance-projected variants, and
+norm-matched random controls. Structured rewriting raises
+arithmetic accuracy from 22.5% to 70.0%, while frequently
+eliciting worked solutions despite an integer-only instruction.
+Numeral-only decoding removes this advantage. A post-hoc
+control with verbatim task cores and equal-token wrappers
+reverses the accuracy contrast: 95.0% for a conversational
+wrapper versus 25.0% for a task-framed wrapper. The raw
+style direction aligns strongly with formality (cosine 0.87) but
+minimally with explicit authorship (0.03). Its interventions
+fail to reliably increase prompted AI-authorship self-report.
+Refusal contrasts are imprecise and false-belief agreement is
+floor-limited. The results demonstrate presentation-sensitive
+behavior, but do not identify an internal perceived-authorship
+mechanism.
+1
+Introduction
+Synthetic requests appear in model-written evaluations, au-
+tomated auditing, and multi-agent workflows. If they elicit
+different responses from ordinary conversational requests, eval-
+uation findings may depend on how prompts were produced.
+But “written by an LLM” and “reads like an LLM” are different
+variables. Humans can write structured specifications, and lan-
+guage models can imitate casual prose. Moreover, rewriting can
+alter clarity, length, politeness, or substantive intent. A com-
+parison of two prompt sets alone cannot identify an authorship
+mechanism.
+We study three questions. First, do matched conversational
+and structured rewrites change observable responses? Second,
+does the responding model’s authorship self-report change in
+the intended direction? Third, do internal interventions learned
+from style contrasts change behavior with the request text held
+fixed, and how do those directions relate to formality, explicit
+authorship attribution, and evaluation context?
+The contribution is a reproducible, single-model mechanis-
+tic pilot with controls and explicit identification limits. It is
+not a claim that synthetic text reliably reveals its true author,
+nor a comprehensive safety benchmark. We preserve raw re-
+quests, API responses, local generations, hidden states, vectors,
+judgments, and analysis scripts. Importantly, we treat decod-
+ability, self-report, and causal behavioral effects as distinct
+measurements. An intervention can change an output without
+demonstrating that the model represents an author’s identity.
+2
+Related work
+Evaluation awareness.
+Needham et al. (2025) study discrim-
+ination between evaluation and deployment transcripts. This
+establishes a relevant capability but does not isolate authorship
+style. Abdelnabi and Salem (2025) probe and steer test aware-
+ness while measuring safety-related behavior; Nguyen et al.
+(2025) investigate evaluation representations in an instruction-
+tuned model. More recently, Heidari et al. (2026) distinguish
+internal representations, verbalization, and effects of steering.
+These distinctions motivate our separate calibration, authorship
+readout, and response measurements. Our evaluation direc-
+tion is learned from explicit textual context labels, so it is a
+local proxy rather than a reproduction of those papers’ natural-
+transcript probes.
+Text-source detection and preference.
+RepreGuard extracts
+statistical differences in representations to detect machine-
+generated text (Chen et al., 2025); Quaremba et al. (2026)
+investigate linear probes and cross-domain machine-text detec-
+tion. Neither detection accuracy nor linear separability alone
+implies that a responding assistant uses perceived authorship
+to choose its behavior. Panickssery et al. (2024) study recog-
+nition and preference for a model’s own generations. AI–AI
+bias in communication judgments (Laurito et al., 2024) and
+self-preferencing in hiring (Xu et al., 2025) concern evaluation
+of candidate text, rather than the source of an instruction. Our
+study concerns the latter, while acknowledging that we do not
+1
+
+manipulate true provenance.
+Prompt construction and behavioral mechanisms.
+Prompt
+formatting can affect model behavior even without an author-
+ship explanation (Sclar et al., 2023). Chalkidis (2026) directly
+compare prompt-construction strategies in political-stance mea-
+surement and find construction-dependent estimates. That study
+makes it particularly important to include a conversational para-
+phrase control and to check realism rather than equate templat-
+ing with human authorship. Sycophancy research motivates
+measuring agreement with a user’s false belief (Sharma et al.,
+2023); our arithmetic implementation is deliberately narrower
+than general sycophancy. Work identifying a refusal-related
+direction (Arditi et al., 2024) motivates fixed-text interventions,
+while also warning that a direction with a behavioral effect need
+not encode the concept used to label it.
+3
+Design and identification
+Let c be a canonical request, s its wording condition, x(c, s) the
+resulting text, h(x) an activation, and Y a response outcome.
+The paired rewrite contrast is
+∆s = 1
+N
+X
+i
+[Y (x(ci, s)) −Y (x(ci, H1))] .
+(1)
+This contrast controls request identity but only approximately
+controls meaning. It also changes observable linguistic features.
+We therefore do not interpret ∆L as an effect of perceived
+authorship.
+The activation contrast instead compares Y (x; h + αd) with
+Y (x; h) for the same text x. This isolates an effect of the imple-
+mented intervention on the network. Identifying this effect as
+authorship-mediated would additionally require that d changes
+the relevant authorship representation, does not materially alter
+competing features or general competence, and transfers to a
+valid authorship readout. We test pieces of this argument, but
+do not assume its exclusion restrictions.
+3.1
+Items and wording conditions
+We
+construct
+120
+behavioral
+requests:
+40
+two-digit
+multiplication-minus-subtraction problems; 40 independently
+sampled arithmetic problems with an asserted, incorrect answer
+and a request to confirm or correct it; and 20 pairs of risky
+and benign requests. Arithmetic answers are computed directly
+in code. The false answers differ by a signed small or larger
+offset. Safety pairs concern deception, privacy, coercion, or
+rule evasion and corresponding benign assistance. They are
+researcher-designed examples, not a representative policy tax-
+onomy, and “risky” is a design label rather than a judgment that
+all cases require refusal.
+Every item has five variants: original (O), conversational
+paraphrase (H1), another conversational paraphrase (H2), struc-
+tured LLM-like rewrite (L), and formal prose (F). GPT-4.1-mini,
+accessed through OpenRouter, generates all four rewrites in
+one call with explicit requirements to preserve facts, intent,
+stance, authorization, and requested output. It is instructed to
+match length approximately, not to answer the request or add
+safety qualifications. Headings and lists are optional in L; it
+denotes an intended task-framed style, not a fixed layout. H2
+controls for undergoing paraphrasing; F tests whether effects
+also appear with polished prose without headings or lists. The
+original requests were authored by this autonomous research
+agent. Thus even H1 and H2 are machine-generated. Their
+names indicate intended style only.
+An independent Gemini-2.5-Flash audit checks semantic
+equivalence to the original and rates clarity, politeness, formal-
+ity, and AI-likeness on a five-point scale. The audit receives
+variant keys but not target-model outputs; it is not a human
+validation. We retain all variants in the primary comparison
+and report equivalence-filtered and token-length-matched sen-
+sitivity analyses.
+3.2
+Calibration and interventions
+Eighty benign calibration requests cover 20 topics under four
+request forms. Fifteen topics (60 requests) train directions; five
+held-out topics (20 requests) assess transfer. These topics are
+separate from behavioral tasks. We use Qwen2.5-7B-Instruct
+(Qwen et al., 2024) in bfloat16, without weight quantization, on
+one RTX A6000. The model revision and dependency versions
+are recorded. All activation directions use the output of decoder
+block 14 of 28 at the last token of the chat-formatted prompt,
+including its assistant-generation prefix. Layer choice is fixed
+before outcomes; no layer search is performed.
+For calibration request i, denote the activation under variant
+v by hv
+i . The raw style difference is
+ds = 1
+60
+X
+i
+(hL
+i −hH1
+i
+).
+(2)
+We similarly construct a formal-prose difference df, and a
+redundant-length difference dℓby appending three repetitions
+of “Please respond to the request above.” to H1. This is a
+concrete redundant-instruction control, not a pure length vari-
+able. If Q is an orthonormal basis for the span of df, dℓ, the
+nuisance-projected difference is
+dc = (I −QQ⊤)ds.
+(3)
+This projection removes two learned linear directions; it does
+not remove every possible surface confound.
+An independent attribution contrast prepends either “The
+following request was written by an AI language model.” or
+“The following request was written by a human user.” to H1.
+An evaluation contrast prepends explicit artificial-evaluation
+versus real-interaction context. Mean differences define da and
+de. These vectors operationalize responses to source/context
+assertions, not validated latent mental states. Three seeded
+isotropic Gaussian vectors supply random controls.
+All directions are normalized to the norm of ds, including the
+nuisance-projected direction, and tested at α = −1, +1. We
+additionally test α = −2, +2 for style and nuisance-projected
+directions as dose sensitivity. During generation, we add the
+2
+
+vector to the final prompt position on prefill and the current
+token on each cached decoding step; earlier prompt positions
+are unchanged. This recurrent intervention is more extensive
+than changing one initial state. All steering comparisons use H1
+text, with no added attribution claims in the behavioral prompt.
+3.3
+Manipulation checks and outcomes
+For a separate authorship readout, the target model receives a
+classification system instruction and the same user text. We
+compute the next-token probability of the AI label conditional
+on the two allowed labels, A and B, and average across reversed
+label mappings. We retain the total probability mass assigned
+to A/B. This is prompted authorship self-report in a different
+system context; it is neither calibrated truth nor proof of sponta-
+neous attribution during assistance. We measure both wording
+and activation effects on it.
+Behavioral outputs use the system message “You are a help-
+ful assistant.” and greedy decoding. Accuracy is endorsement
+of the computed correct integer as the final answer; false agree-
+ment is endorsement of the asserted incorrect integer. Merely
+quoting a false number is not agreement. Refusal is an explicit
+decline to perform the requested task; a warning alone is insuf-
+ficient. We also score fulfillment, incoherence, and truncation,
+because refusal can coexist with partial assistance and reduced
+refusal is not necessarily harmful compliance.
+Gemini-2.5-Flash judges canonical requests and responses
+without seeing wording-condition or steering labels. The canon-
+ical request is used to prevent the judge from changing its
+standard with surface style. For single-integer mathematical re-
+sponses, deterministic comparison to the computed answer over-
+rides any conflicting judge label; raw judgments and disagree-
+ments are retained. Other response formats use the judge. A
+second judge, GPT-4.1-mini, scores unsteered safety responses
+for an agreement check. API requests, returned model identi-
+fiers, and judgments are archived; provider inference itself is
+not exactly reproducible.
+3.4
+Analysis and protocol changes
+We report paired percentage-point differences with 10,000-
+resample percentile bootstrap intervals. For pooled author-
+ship readouts, each risky/benign safety pair is resampled as
+a cluster. Each safety subgroup has one item per pair. Exact
+two-sided paired binary tests compare L with H1 for accu-
+racy, false agreement, risky refusal, and benign refusal, with
+Holm adjustment across these four comparisons. Other con-
+trasts and steering analyses are exploratory and intervals are
+not multiplicity-adjusted. A zero-width bootstrap interval for
+an all-zero contrast does not establish population equivalence.
+The
+prospective
+protocol
+is
+preserved
+in
+results/protocol.md,
+together
+with
+amendments.
+An initial dependency failure occurred before target outputs.
+A short-cap generation pilot then exposed substantial right
+censoring from verbose arithmetic explanations. We retained
+that pilot separately and reran all main outputs with a uniform
+512-token cap, rather than selectively retaining successful an-
+swers. This data-dependent change and the convenience sample
+make the study exploratory, not preregistered confirmation.
+Exploratory exact-core control.
+Inspection of individual
+rewrites identified stance weakening and added emphasis
+missed by the automated audit. We therefore add a separate
+experiment on the accuracy and safety items, excluding the
+floor-limited false-belief group. The original task is retained
+byte-for-byte, preceded by a conversational, task-framed, or
+formal wrapper. Each wrapper is exactly ten Qwen tokens, and
+full prompt lengths are checked equal within item. We generate
+responses and repeat the counterbalanced authorship readout.
+This controls the task core and token length exactly, while
+changing a narrower aspect of presentation than full rewriting;
+it does not equate politeness or establish actual authorship. All
+these comparisons are post hoc.
+4
+Results
+4.1
+Coverage, matching, and perception
+The main experiment contains 2,880 generated responses, 6,560
+counterbalanced authorship classifications, and 800 calibration
+representations. Separate follow-ups add 200 digit-constrained
+responses and 240 exact-core responses, with 480 further clas-
+sifications. Counts refer to item-condition observations, not
+batches.
+Structured rewrites increase mean conditional AI-authorship
+probability from 31.2% for H1 to 48.0%; the paired difference
+is +16.8 pp (95% CI [+13.5, +20.1]). Formal prose also raises
+the readout to 45.1%. These are pooled manipulation checks
+for perceived style, not source-detection accuracies. On the
+arithmetic subset alone, the L–H1 readout difference is only
++0.83 pp (95% CI [+0.03, +1.73]). The pooled check therefore
+does not validate an authorship manipulation for every behav-
+ioral outcome. Figure 1 contrasts this readout with response
+outcomes.
+Matching remains imperfect: only 67.5% of L/H1 pairs are
+within the specified token-length tolerance. Table 1 reports
+measured surface features. The blinded audit marks 116 of the
+120 behavioral L variants equivalent. Yet it also marks an exact
+original/reference match non-equivalent, and agent inspection
+finds weakened confidence assertions and extra emphasis that
+the audit misses. We therefore treat automated equivalence as a
+noisy check, not a guarantee.
+4.2
+Full rewrites change accuracy and response
+format
+Table 2 reports all wording conditions. The L–H1 accuracy
+contrast is +47.5 pp (95% CI [+32.5, +62.5]). The formal-
+prose control achieves 90.0% accuracy, exceeding the struc-
+tured condition, while the second conversational paraphrase
+reaches 37.5%. Thus the accuracy gain is not unique to the
+intended machine-like style.
+3
+
+Original
+H1
+H2
+L
+F
+0
+20
+40
+60
+80
+100
+Authorship self-report: P(AI), %
+Original
+H1
+H2
+L
+F
+0
+20
+40
+60
+80
+100
+Response rate, %
+Accuracy
+False agreement
+Risky refusal
+Figure 1: Full-rewrite experiment. Left: target-model AI-authorship self-report pooled over 120 behavioral requests, conditional
+on the two labels and averaged over reversed label mappings; the arithmetic-only manipulation is weak. Right: scored response
+rates. H1/H2 are conversational rewrites; L is intended LLM-like style; F is formal prose. Actual provenance is synthetic in
+every condition.
+Style
+Tokens
+Clarity
+Polite
+Formal
+AI-like
+original
+24.46
+4.98
+3.33
+3.36
+1.43
+h1
+28.23
+4.86
+3.70
+2.82
+2.27
+h2
+29.62
+4.87
+3.72
+3.23
+2.47
+llm
+32.22
+4.93
+3.69
+4.02
+3.38
+formal
+31.75
+4.73
+4.28
+4.49
+3.55
+Table 1: Behavioral prompts: mean Qwen token counts and
+blinded audit ratings (five-point scales). Polite/Formal/AI-like
+denote politeness, formality, and AI-likeness.
+Outcome
+Original
+H1
+H2
+L
+F
+Accuracy
+42.5
+22.5
+37.5
+70.0
+90.0
+False agreement
+0.0
+0.0
+0.0
+0.0
+0.0
+Risky refusal
+70.0
+75.0
+50.0
+65.0
+55.0
+Benign refusal
+0.0
+0.0
+5.0
+0.0
+5.0
+Table 2: Unsteered response rates (%). Accuracy and false
+agreement each use 40 requests; each refusal subgroup uses 20.
+False agreement at zero is a floor, not evidence of equivalence.
+The response channel changes sharply. Although the accu-
+racy requests ask for only an integer, 100.0% of H1 responses
+meet that format, compared with 30.0% for L and 7.5% for
+F. Mean generated lengths are 4.8, 90.3, and 109.2 tokens,
+respectively. The more accurate conditions commonly emit in-
+termediate arithmetic. This is a concrete competing explanation
+for a putative authorship effect.
+Risky-request refusal changes by -10.0 pp (95% CI [-35.0,
++15.0]). H2 refusal is 50.0%, compared with 75.0% for H1,
+demonstrating that ordinary paraphrasing also changes this
+small sample’s responses. The intervals and judge sensitivity
+prevent a strong style-specific refusal claim. No wording con-
+dition produces an endorsed false arithmetic belief. This floor
+Outcome
+L−H1, pp [95% CI]
+Holm p
+Accuracy
++47.5 [+32.5, +62.5]
+1.53e-05
+False agreement
++0.0 [+0.0, +0.0]
+1
+Risky refusal
+-10.0 [-35.0, +15.0]
+1
+Benign refusal
++0.0 [+0.0, +0.0]
+1
+Table 3: Paired L–H1 effects; percentage-point bootstrap inter-
+vals and exact paired tests with Holm adjustment across these
+four contrasts.
+leaves that hypothesis largely untested, even though correction
+accuracy can vary. Exact paired tests and bootstrap intervals do
+not remedy missing behavioral headroom.
+4.3
+Response-channel and verbatim-core con-
+trols
+In the post-hoc digit-constrained run, every response terminates
+within the cap. Accuracy becomes 22.5% for H1, 12.5% for
+L, and 2.5% for F (Table 4). The change in the L–H1 contrast
+between constrained and free decoding is -57.5 pp (95% CI
+[-72.5, -42.5]). Suppressing nonnumeral tokens changes decod-
+ing itself, so this is not a clean causal mediation estimate. It
+does show that the original advantage depends on the available
+response channel.
+The exact-core experiment changes only a ten-token wrap-
+per around the original request, with equal full prompt lengths.
+Here conversational-wrapper accuracy is 95.0%, task-wrapper
+accuracy is 25.0%, and formal-wrapper accuracy is 20.0% (Ta-
+ble 5). The task–conversational difference is -70.0 pp (95% CI
+[-82.5, -55.0]), opposite to the full-rewrite result. Its authorship
+self-report difference is +8.1 pp (95% CI [+5.1, +10.9]); the
+absolute conversational and task-framed readouts are 39.0%
+and 47.1%, respectively. These pooled readouts should not be
+interpreted as arithmetic-specific evidence: on exact-core arith-
+4
+
+Style
+Integer-only
+Free accuracy
+Digit-only accuracy
+original
+77.5
+42.5
+27.5
+h1
+100.0
+22.5
+22.5
+h2
+72.5
+37.5
+12.5
+llm
+30.0
+70.0
+12.5
+formal
+7.5
+90.0
+2.5
+Table 4: Arithmetic response format and decoding sensitivity
+(%). Integer-only is format adherence under free generation;
+digit-only accuracy is a separate restricted-decoding experi-
+ment.
+Outcome
+H wrapper
+Task wrapper
+Formal wrapper
+Accuracy
+95.0
+25.0
+20.0
+Risky refusal
+75.0
+90.0
+90.0
+Benign refusal
+0.0
+0.0
+0.0
+Table 5: Post-hoc verbatim-core control: response rates (%).
+Task text and within-item token length are identical; only the
+wrapper changes.
+metic alone the readout difference is +0.01 pp (95% CI [-0.02,
++0.05]). Together with the weak arithmetic manipulation in the
+full-rewrite experiment, this prevents attributing either accuracy
+contrast to measured perceived authorship. In the exact-core
+run, 0.0% of conversational-wrapper responses are integer-only,
+compared with 100.0% of task-wrapper responses. Figure 2
+shows this response-format reversal. These wrapper results
+are not a new test of actual source identity. They show why
+findings from one operationalization of “LLM-like” wording
+should not be generalized to others.
+4.4
+Decodability does not establish intervention
+validity
+On held-out calibration topics, raw-style AUROC is 1.000;
+nuisance-projected style reaches 0.980. Explicit authorship and
+evaluation contrasts each reach 1.000 and 1.000, respectively.
+However, these last probes discriminate explicit labels, not
+inferred natural provenance. The authorship direction has only
+0.633 AUROC for L versus H1, and the evaluation direction
+0.400.
+The raw style direction has cosine 0.871 with formality,
+0.355 with redundant length, 0.032 with explicit authorship,
+and -0.046 with evaluation context. Its norm is 14.50, compared
+with a mean H1 activation norm of 58.88. Projection leaves
+a raw norm of 7.12, which is then rescaled to the common
+intervention norm. This rescaling matters when interpreting the
+projected-direction dose.
+For prompted AI-authorship self-report, positive raw-style
+steering changes the mean by -1.3 pp (95% CI [-1.9, -0.7]),
+and positive explicit-authorship steering by -0.5 pp (95% CI
+[-0.8, -0.2]), relative to the zero-vector sham. Thus neither
+provides the intended positive manipulation in this readout.
+The directions are decodable calibration contrasts, but are not
+validated controls of perceived authorship during assistance.
+4.5
+Behavior under fixed-text interventions
+Figure 3 and Appendix Table 6 report behavioral effects. At
+positive unit dose, raw-style steering changes accuracy by -2.5
+pp (95% CI [-12.5, +7.5]) and risky refusal by +10.0 pp (95% CI
+[+0.0, +25.0]). The nuisance-projected direction changes these
+outcomes by -5.0 pp (95% CI [-12.5, +0.0]) and +0.0 pp (95%
+CI [-15.0, +15.0]), respectively. Small shifts also occur under
+random directions. These effects belong to the implemented
+interventions; the failed authorship manipulation check blocks
+a stronger interpretation as an authorship-mediated effect or a
+causal null for authorship.
+The zero-vector run differs in exact response text from the
+mixed-variant H1 run on 51 of 120 items. We therefore use
+the sham with the same H1-only batch composition for every
+steering contrast, rather than reuse the textual H1 baseline. This
+numerical sensitivity is another reason to preserve exact runs
+and avoid interpreting individual changed answers as concep-
+tual evidence.
+4.6
+Measurement checks
+The independent safety judge agrees with the primary judge
+on 90.5% of the 200 refusal labels, but only 68.0% of fulfill-
+ment labels. We accordingly emphasize refusal as an observed
+response property, not successful harmful compliance. Under
+the second judge, the L–H1 risky-refusal contrast is +0.0 pp
+(95% CI [-20.0, +20.0]). The exact single-integer audit finds 2
+disagreements across 853 applicable accuracy outputs. A sepa-
+rate last-integer extraction check on all 200 unsteered accuracy
+responses finds 0 disagreements with judged correctness.
+Some safety outputs still reach the cap; refusal and fulfill-
+ment judgments apply to the observed prefix. The appendix
+reports truncation and filtered analyses. Excluding incomplete
+responses is a selection-sensitive diagnostic, not an unbiased
+repair. Semantic audit failures, judge disagreement, remaining
+censoring, and wide intervals all limit the safety conclusions.
+5
+Limitations
+This study manipulates intended style, not actual human ver-
+sus machine provenance. No natural human prompt corpus or
+human style validation is used. The entire set is English and
+synthetic, and all rewrites come from one generator. The find-
+ings therefore cannot establish effects in WildChat, deployed
+multi-agent systems, other model families, or larger models.
+Content matching is imperfect. Automated semantic judg-
+ments may miss changes in emphasis, and a formal-prose
+control is not a factorial manipulation of politeness, clarity,
+structure, and length. The redundant-length direction contains
+repetition and extra instructions. Removing its span with for-
+mality does not produce an unconfounded “authorship-only”
+direction. Calibration has few independent topics, probes use a
+single prespecified layer, and explicit source claims may acti-
+vate lexical or instruction-following features. A small cosine
+does not establish representational independence throughout
+the network.
+5
+
+Conversational
+Task / LLM-like
+Formal
+0
+20
+40
+60
+80
+100
+Percent of 40 responses
+Full rewrites
+Accuracy
+Integer-only output
+Conversational
+Task / LLM-like
+Formal
+0
+20
+40
+60
+80
+100
+Percent of 40 responses
+Verbatim core + wrapper
+Figure 2: Arithmetic accuracy and integer-only format adherence under two presentation manipulations on the same problems.
+Both include an integer-only instruction. The association between the nominal style and the emitted response format reverses
+across operationalizations. These are measured response rates, not a fitted causal model.
+−20
+0
+20
+Change from zero-vector H1, pp
+style_-1
+style_+1
+clean_-1
+clean_+1
+author_-1
+author_+1
+eval_-1
+eval_+1
+random0_-1
+random0_+1
+random1_-1
+random1_+1
+random2_-1
+random2_+1
+Accuracy
+−20
+0
+20
+Change from zero-vector H1, pp
+False agreement
+−20
+0
+20
+Change from zero-vector H1, pp
+Risky refusal
+Figure 3: Fixed-text interventions relative to a zero-vector sham, with paired 95% bootstrap intervals. Directions share a
+Euclidean norm. Random controls are three seeded isotropic directions; positive style is oriented from H1 toward L in calibration.
+These exploratory intervals are not multiplicity-adjusted.
+The authorship readout changes the system task from assis-
+tance to classification. It can respond to answer-label biases or
+direct steering effects on logits despite counterbalancing. Even
+agreement between a classifier and a probe would not suffice to
+identify a mediator. Random controls establish only a limited
+reference distribution with three directions, and repeated steer-
+ing may alter computations beyond authorship. Dose sensitivity
+must therefore be considered alongside accuracy and output
+quality.
+Our arithmetic false-belief test covers a narrow form of syco-
+phancy; incorrect agreement can reflect computation errors as
+well as social deference. We do not compare each false-belief
+request with its own belief-free twin, so these measurements
+cannot fully separate those mechanisms. Refusal is not syn-
+onymous with safety, particularly for ambiguous rule-evasion
+examples. Automated judges may share systematic preferences
+with the rewrite model, and agreement between two judges is
+not ground truth. Generation caps, remaining incomplete an-
+swers, ceilings, and small subgroup sizes further limit inference.
+Nonsignificant comparisons are not evidence of equivalence.
+6
+Conclusion
+Prompt presentation changes this model’s arithmetic accuracy
+and response format substantially, but “machine-like style” is
+not a stable behavioral treatment: full rewrites and length-
+matched wrappers with verbatim task cores give opposite ac-
+curacy contrasts. The available response channel is a major
+competing explanation. A direction that decodes style on held-
+out topics is strongly aligned with formality and fails to transfer
+as a reliable positive authorship self-report intervention. Re-
+fusal estimates remain uncertain, and the false-belief task is
+6
+
+floor-limited. The supported conclusion is presentation sensi-
+tivity in this controlled synthetic setting, not a demonstrated
+internal human-versus-LLM authorship mechanism. Evalua-
+tions seeking that mechanism should validate both the linguistic
+manipulation and the causal intervention, separate computa-
+tion and format compliance from accuracy, and use natural
+provenance data before making deployment claims.
+Reproducibility and disclosure.
+The workspace provides
+scripts under src/, raw and processed outputs under
+results/, and all paper tables and figures generated by anal-
+ysis code. Model weights and caches are excluded from version
+control. This report, its implementation, and its researcher-
+designed items were produced by an autonomous AI agent; no
+human participants or human annotators were recruited. Risky
+examples are limited to nonviolent safety-evaluation scenarios.
+The main paper reports aggregate behavior rather than detailed
+harmful responses.
+References
+Sahar Abdelnabi and Ahmed Salem. The Hawthorne Effect
+in Reasoning Models: Evaluating and Steering Test Aware-
+ness, 2025.
+URL https://arxiv.org/abs/2505.
+14617.
+Andy Arditi, Oscar Obeso, Aaquib Syed, Daniel Paleka, Nina
+Panickssery, Wes Gurnee, and Neel Nanda. Refusal in Lan-
+guage Models Is Mediated by a Single Direction, 2024. URL
+https://arxiv.org/abs/2406.11717.
+Ilias Chalkidis. Templated or fully synthetic? Prompt con-
+struction as a confound in measuring LLM political stance
+beyond writing assistance, 2026. URL https://arxiv.
+org/abs/2608.11008.
+Xin Chen, Junchao Wu, Shu Yang, Runzhe Zhan, Zeyu Wu,
+Ziyang Luo, Di Wang, Min Yang, Lidia S. Chao, and Derek F.
+Wong. RepreGuard: Detecting LLM-Generated Text by
+Revealing Hidden Representation Patterns, 2025.
+URL
+https://arxiv.org/abs/2508.13152.
+Farzaneh Heidari, Amin Memarian, and Guillaume Rabusseau.
+Evaluation Awareness in Language Models: Representation,
+Verbalization, and Control, 2026. URL https://arxiv.
+org/abs/2608.21766.
+Walter Laurito, Benjamin Davis, Peli Grietzer, Tomáš
+Gavenˇciak, Ada Böhm, and Jan Kulveit. AI-AI Bias: large
+language models favor communications generated by large
+language models, 2024. URL https://arxiv.org/
+abs/2407.12856.
+Joe Needham, Giles Edkins, Govind Pimpale, Henning Bartsch,
+and Marius Hobbhahn. Large Language Models Often Know
+When They Are Being Evaluated, 2025. URL https://
+arxiv.org/abs/2505.23836.
+Jord Nguyen, Khiem Hoang, Carlo Leonardo Attubato, and
+Felix Hofstätter. Probing and Steering Evaluation Awareness
+of Language Models, 2025. URL https://arxiv.org/
+abs/2507.01786.
+Arjun Panickssery, Samuel R. Bowman, and Shi Feng.
+LLM Evaluators Recognize and Favor Their Own Gener-
+ations, 2024. URL https://arxiv.org/abs/2404.
+13076.
+Gerrit Quaremba, Hanqi Yan, Elizabeth Black, Denny Vrande-
+cic, and Elena Simperl. Linear Probing Provides Robust and
+Efficient Detection of Machine-Generated Text, 2026. URL
+https://arxiv.org/abs/2608.24780.
+Qwen, An Yang, Baosong Yang, Beichen Zhang, Binyuan
+Hui, et al. Qwen2.5 Technical Report, 2024. URL https:
+//arxiv.org/abs/2412.15115.
+Melanie Sclar, Yejin Choi, Yulia Tsvetkov, and Alane Suhr.
+Quantifying Language Models’ Sensitivity to Spurious Fea-
+tures in Prompt Design or: How I learned to start worrying
+about prompt formatting, 2023. URL https://arxiv.
+org/abs/2310.11324.
+Mrinank Sharma, Meg Tong, Tomasz Korbak, David Duvenaud,
+Amanda Askell, et al. Towards Understanding Sycophancy
+in Language Models, 2023. URL https://arxiv.org/
+abs/2310.13548.
+Jiannan Xu, Gujie Li, and Jane Yi Jiang. AI Self-preferencing in
+Algorithmic Hiring: Empirical Evidence and Insights, 2025.
+URL https://arxiv.org/abs/2509.00462.
+A
+Additional measurements and exam-
+ples
+A.1
+Filtered wording comparisons
+Outcome
+Filter
+n
+L−H1, pp [95% CI]
+Accuracy
+equivalent
+40
++47.5 [+32.5, +62.5]
+Accuracy
+length20
+28
++57.1 [+39.3, +75.0]
+Accuracy
+complete-pair
+40
++47.5 [+32.5, +62.5]
+False agreement
+equivalent
+40
++0.0 [+0.0, +0.0]
+False agreement
+length20
+40
++0.0 [+0.0, +0.0]
+False agreement
+complete-pair
+40
++0.0 [+0.0, +0.0]
+Risky refusal
+equivalent
+19
+-5.3 [-26.3, +15.8]
+Risky refusal
+length20
+8
+-12.5 [-37.5, +0.0]
+Risky refusal
+complete-pair
+17
+-17.6 [-41.2, +5.9]
+Benign refusal
+equivalent
+16
++0.0 [+0.0, +0.0]
+Benign refusal
+length20
+5
++0.0 [+0.0, +0.0]
+Benign refusal
+complete-pair
+10
++0.0 [+0.0, +0.0]
+Filters denote audit-equivalent pairs, token-length ratio
+within the prespecified tolerance, and pairs where neither re-
+sponse is truncated. Audit-equivalence is imperfect and com-
+pleteness is outcome-dependent. These sensitivity analyses do
+not eliminate confounding.
+7
+
+Direction / dose
+Accuracy
+False agreement
+Risky refusal
+sham
+22.5
+0.0
+65.0
+style_-1
+15.0
+0.0
+70.0
+style_+1
+20.0
+0.0
+75.0
+clean_-1
+30.0
+0.0
+65.0
+clean_+1
+17.5
+0.0
+65.0
+author_-1
+17.5
+0.0
+65.0
+author_+1
+27.5
+0.0
+60.0
+eval_-1
+25.0
+0.0
+70.0
+eval_+1
+17.5
+0.0
+70.0
+random0_-1
+17.5
+0.0
+70.0
+random0_+1
+20.0
+0.0
+70.0
+random1_-1
+15.0
+0.0
+70.0
+random1_+1
+30.0
+0.0
+70.0
+random2_-1
+30.0
+0.0
+60.0
+random2_+1
+20.0
+0.0
+60.0
+style_-2
+17.5
+0.0
+60.0
+style_+2
+17.5
+0.0
+70.0
+clean_-2
+25.0
+0.0
+70.0
+clean_+2
+15.0
+0.0
+60.0
+Table 6: All fixed-text intervention response rates (%). “Clean” denotes the nuisance-projected style direction. Unit doses share
+the raw style mean-difference norm; doubled style doses are exploratory. All prompts use H1.
+A.2
+Truncation and output quality
+Condition
+Safety truncated (%)
+Incoherent (%)
+none
+24.5
+0.2
+sham
+17.5
+0.0
+style_-1
+20.0
+0.0
+style_+1
+17.5
+0.0
+clean_-1
+10.0
+0.0
+clean_+1
+22.5
+0.0
+author_-1
+12.5
+0.0
+author_+1
+20.0
+0.0
+eval_-1
+17.5
+0.0
+eval_+1
+12.5
+0.0
+style_-2
+15.0
+0.0
+style_+2
+12.5
+0.0
+clean_-2
+10.0
+0.0
+clean_+2
+15.0
+0.0
+Incoherence aggregates all three behavioral groups. For the
+unsteered row, all five equally sized style groups are averaged.
+Truncation is not itself judged incoherence. Main judgments
+describe the displayed response prefix, not an unobserved com-
+pletion.
+A.3
+Task-specific manipulation checks
+Task
+Construction
+L−H1 readout, pp [95% CI]
+accuracy
+Rewrite
++0.83 [+0.03, +1.73]
+accuracy
+Exact core
++0.01 [-0.02, +0.05]
+sycophancy
+Rewrite
++22.59 [+17.30, +27.79]
+safety
+Rewrite
++27.12 [+22.30, +32.33]
+safety
+Exact core
++16.14 [+12.26, +19.75]
+Pooled authorship scores conceal substantial task hetero-
+geneity. The arithmetic readout barely changes, especially for
+exact cores, even though accuracy and response format change
+strongly. The larger safety and false-belief readout changes
+must not be used as a manipulation check for arithmetic.
+A.4
+Authorship readout under interventions
+Condition
+P(AI) (%)
+Change from sham (pp)
+author_+1
+31.1
+-0.46
+author_-1
+31.2
+-0.36
+clean_+1
+30.2
+-1.39
+clean_+2
+28.4
+-3.17
+clean_-1
+33.0
++1.43
+clean_-2
+37.4
++5.80
+eval_+1
+31.5
+-0.06
+eval_-1
+31.2
+-0.37
+none
+31.2
+-0.37
+random0_+1
+31.6
++0.04
+random0_-1
+30.9
+-0.68
+random1_+1
+31.9
++0.40
+random1_-1
+30.1
+-1.47
+random2_+1
+28.3
+-3.25
+random2_-1
+31.9
++0.32
+sham
+31.6
++0.00
+style_+1
+30.3
+-1.27
+style_+2
+31.2
+-0.40
+style_-1
+30.8
+-0.71
+style_-2
+33.0
++1.48
+Mean two-label probability mass is 0.9994 or greater across
+intervention conditions. Label normalization is therefore not
+hiding a large rejection of the classification format in these
+8
+
+aggregates.
+A.5
+Prompt example and exact wrappers
+original.
+What is 82 times 59, minus 14? Give just the integer
+answer.
+h1.
+Can you tell me what 82 times 59 minus 14 equals? Just
+give me the number.
+llm.
+Calculate the value of 82 multiplied by 59, then subtract
+14 from the product. Provide only the integer result.
+formal.
+Please compute the product of 82 and 59, then sub-
+tract 14 from this value. Provide solely the integer result.
+The correct answer is 4824. None of these prompts requests
+a worked solution. The original remains verbatim after each
+wrapper in the exact-core experiment.
+h1
+wrapper.
+hey, can you help me with this
+request? followed by a blank line and the original task.
+llm
+wrapper.
+Task:
+Please respond to the
+following user request. followed by a blank line
+and the original task.
+formal wrapper.
+Kindly provide a response to
+the following request. followed by a blank line and
+the original task.
+A.6
+Implementation and audit trail
+The
+target
+checkpoint
+revision
+is
+a09a35458c702b33eeacc393d103063234e8bc28.
+Inference uses PyTorch 2.5.1 and Transformers 4.51.3,
+bfloat16, SDPA, and batches of 12. Sampling is disabled.
+The archived generation configuration still contains sampling
+defaults, which are inactive under greedy decoding. No model
+weights are updated.
+API calls use temperature zero initially; malformed-response
+retries can increase temperature in increments of 0.1. One nar-
+rowly defined parser repair removes a duplicated opening quote
+on JSON keys while preserving values; original responses and
+repaired strings are retained. Missing or malformed judgments
+are not replaced by assumed scores. The preliminary unblinded
+audit is retained but not used in the reported analysis. One
+blinded audit incorrectly rejects an exact original/reference
+match, illustrating the need to inspect content rather than trust
+a semantic-equivalence label alone.
+In the exact-core follow-up, deterministic integer scoring
+corrects 1 conflicting API correctness labels. For instance, the
+archived judgment can be compared directly against the com-
+puted answer; raw labels are never overwritten in the judgment
+file.
+Numeral-only decoding permits digit tokens and end-of-
+sequence after the first digit, and caps output at 12 tokens.
+It does not force the correct answer or supply a reasoning trace.
+Because masking changes which next token is selected, its re-
+sult is a response-channel sensitivity test, not an estimate of the
+isolated benefit of internal reasoning.
+9

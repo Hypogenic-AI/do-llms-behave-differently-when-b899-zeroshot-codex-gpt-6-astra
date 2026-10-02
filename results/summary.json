@@ -1,0 +1,2930 @@
+{
+  "strict_numeric": {
+    "n": 853,
+    "disagreements": 2
+  },
+  "last_integer_audit": {
+    "n": 200,
+    "disagreements": 0
+  },
+  "behavior": [
+    {
+      "outcome": "Accuracy",
+      "variant": "original",
+      "n": 40,
+      "rate": 0.425,
+      "delta": [
+        0.2,
+        0.025,
+        0.375
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "variant": "h1",
+      "n": 40,
+      "rate": 0.225,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "variant": "h2",
+      "n": 40,
+      "rate": 0.375,
+      "delta": [
+        0.15,
+        -0.025,
+        0.325
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "variant": "llm",
+      "n": 40,
+      "rate": 0.7,
+      "delta": [
+        0.475,
+        0.325,
+        0.625
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "variant": "formal",
+      "n": 40,
+      "rate": 0.9,
+      "delta": [
+        0.675,
+        0.525,
+        0.825
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "variant": "original",
+      "n": 40,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "variant": "h1",
+      "n": 40,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "variant": "h2",
+      "n": 40,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "variant": "llm",
+      "n": 40,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "variant": "formal",
+      "n": 40,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "variant": "original",
+      "n": 20,
+      "rate": 0.7,
+      "delta": [
+        -0.05,
+        -0.2,
+        0.1
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "variant": "h1",
+      "n": 20,
+      "rate": 0.75,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "variant": "h2",
+      "n": 20,
+      "rate": 0.5,
+      "delta": [
+        -0.25,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "variant": "llm",
+      "n": 20,
+      "rate": 0.65,
+      "delta": [
+        -0.1,
+        -0.35,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "variant": "formal",
+      "n": 20,
+      "rate": 0.55,
+      "delta": [
+        -0.2,
+        -0.4,
+        -0.05
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "variant": "original",
+      "n": 20,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "variant": "h1",
+      "n": 20,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "variant": "h2",
+      "n": 20,
+      "rate": 0.05,
+      "delta": [
+        0.05,
+        0.0,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "variant": "llm",
+      "n": 20,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "variant": "formal",
+      "n": 20,
+      "rate": 0.05,
+      "delta": [
+        0.05,
+        0.0,
+        0.15
+      ]
+    }
+  ],
+  "primary": [
+    {
+      "outcome": "Accuracy",
+      "n": 40,
+      "delta": [
+        0.475,
+        0.325,
+        0.625
+      ],
+      "discordant": 19,
+      "up": 19,
+      "p": 3.814697265625e-06,
+      "holm_p": 1.52587890625e-05
+    },
+    {
+      "outcome": "False agreement",
+      "n": 40,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "discordant": 0,
+      "up": 0,
+      "p": 1.0,
+      "holm_p": 1
+    },
+    {
+      "outcome": "Risky refusal",
+      "n": 20,
+      "delta": [
+        -0.1,
+        -0.35,
+        0.15
+      ],
+      "discordant": 6,
+      "up": 2,
+      "p": 0.6875,
+      "holm_p": 1
+    },
+    {
+      "outcome": "Benign refusal",
+      "n": 20,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "discordant": 0,
+      "up": 0,
+      "p": 1.0,
+      "holm_p": 1
+    }
+  ],
+  "features": {
+    "formal": {
+      "tokens": 31.75,
+      "clarity": 4.733333333333333,
+      "politeness": 4.283333333333333,
+      "formality": 4.491666666666666,
+      "ai_likeness": 3.55,
+      "equivalent": 0.9833333333333333
+    },
+    "h1": {
+      "tokens": 28.233333333333334,
+      "clarity": 4.858333333333333,
+      "politeness": 3.7,
+      "formality": 2.816666666666667,
+      "ai_likeness": 2.2666666666666666,
+      "equivalent": 0.9833333333333333
+    },
+    "h2": {
+      "tokens": 29.625,
+      "clarity": 4.866666666666666,
+      "politeness": 3.716666666666667,
+      "formality": 3.225,
+      "ai_likeness": 2.466666666666667,
+      "equivalent": 0.9833333333333333
+    },
+    "llm": {
+      "tokens": 32.21666666666667,
+      "clarity": 4.933333333333334,
+      "politeness": 3.691666666666667,
+      "formality": 4.016666666666667,
+      "ai_likeness": 3.375,
+      "equivalent": 0.9666666666666667
+    },
+    "original": {
+      "tokens": 24.458333333333332,
+      "clarity": 4.983333333333333,
+      "politeness": 3.325,
+      "formality": 3.3583333333333334,
+      "ai_likeness": 1.4333333333333333,
+      "equivalent": 0.9916666666666667
+    }
+  },
+  "audit_total": {
+    "formal": {
+      "sum": 198,
+      "count": 200
+    },
+    "h1": {
+      "sum": 198,
+      "count": 200
+    },
+    "h2": {
+      "sum": 198,
+      "count": 200
+    },
+    "llm": {
+      "sum": 196,
+      "count": 200
+    },
+    "original": {
+      "sum": 199,
+      "count": 200
+    }
+  },
+  "audit_original_self_failures": [
+    "safe04_benign"
+  ],
+  "length_match": {
+    "within20pct": 0.675
+  },
+  "sensitivity": [
+    {
+      "outcome": "Accuracy",
+      "filter": "equivalent",
+      "n": 40,
+      "delta": [
+        0.475,
+        0.325,
+        0.625
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "filter": "length20",
+      "n": 28,
+      "delta": [
+        0.5714285714285714,
+        0.39285714285714285,
+        0.75
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "filter": "complete_pair",
+      "n": 40,
+      "delta": [
+        0.475,
+        0.325,
+        0.625
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "filter": "equivalent",
+      "n": 40,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "filter": "length20",
+      "n": 40,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "filter": "complete_pair",
+      "n": 40,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "filter": "equivalent",
+      "n": 19,
+      "delta": [
+        -0.05263157894736842,
+        -0.2631578947368421,
+        0.15789473684210525
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "filter": "length20",
+      "n": 8,
+      "delta": [
+        -0.125,
+        -0.375,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "filter": "complete_pair",
+      "n": 17,
+      "delta": [
+        -0.17647058823529413,
+        -0.4117647058823529,
+        0.058823529411764705
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "filter": "equivalent",
+      "n": 16,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "filter": "length20",
+      "n": 5,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "filter": "complete_pair",
+      "n": 10,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "steering": [
+    {
+      "outcome": "Accuracy",
+      "condition": "author_+1",
+      "rate": 0.275,
+      "delta": [
+        0.05,
+        -0.075,
+        0.2
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "author_-1",
+      "rate": 0.175,
+      "delta": [
+        -0.05,
+        -0.15,
+        0.05
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "clean_+1",
+      "rate": 0.175,
+      "delta": [
+        -0.05,
+        -0.125,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "clean_+2",
+      "rate": 0.15,
+      "delta": [
+        -0.075,
+        -0.175,
+        0.025
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "clean_-1",
+      "rate": 0.3,
+      "delta": [
+        0.075,
+        -0.025,
+        0.175
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "clean_-2",
+      "rate": 0.25,
+      "delta": [
+        0.025,
+        -0.125,
+        0.175
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "eval_+1",
+      "rate": 0.175,
+      "delta": [
+        -0.05,
+        -0.125,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "eval_-1",
+      "rate": 0.25,
+      "delta": [
+        0.025,
+        -0.05,
+        0.1
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "none",
+      "rate": 0.225,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "random0_+1",
+      "rate": 0.2,
+      "delta": [
+        -0.025,
+        -0.125,
+        0.075
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "random0_-1",
+      "rate": 0.175,
+      "delta": [
+        -0.05,
+        -0.15,
+        0.05
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "random1_+1",
+      "rate": 0.3,
+      "delta": [
+        0.075,
+        -0.025,
+        0.175
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "random1_-1",
+      "rate": 0.15,
+      "delta": [
+        -0.075,
+        -0.175,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "random2_+1",
+      "rate": 0.2,
+      "delta": [
+        -0.025,
+        -0.125,
+        0.05
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "random2_-1",
+      "rate": 0.3,
+      "delta": [
+        0.075,
+        -0.025,
+        0.175
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "sham",
+      "rate": 0.225,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "style_+1",
+      "rate": 0.2,
+      "delta": [
+        -0.025,
+        -0.125,
+        0.075
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "style_+2",
+      "rate": 0.175,
+      "delta": [
+        -0.05,
+        -0.15,
+        0.05
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "style_-1",
+      "rate": 0.15,
+      "delta": [
+        -0.075,
+        -0.2,
+        0.025
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "condition": "style_-2",
+      "rate": 0.175,
+      "delta": [
+        -0.05,
+        -0.225,
+        0.125
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "author_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "author_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "clean_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "clean_+2",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "clean_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "clean_-2",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "eval_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "eval_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "none",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "random0_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "random0_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "random1_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "random1_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "random2_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "random2_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "sham",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "style_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "style_+2",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "style_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "False agreement",
+      "condition": "style_-2",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "author_+1",
+      "rate": 0.6,
+      "delta": [
+        -0.05,
+        -0.15,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "author_-1",
+      "rate": 0.65,
+      "delta": [
+        0.0,
+        -0.15,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "clean_+1",
+      "rate": 0.65,
+      "delta": [
+        0.0,
+        -0.15,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "clean_+2",
+      "rate": 0.6,
+      "delta": [
+        -0.05,
+        -0.2,
+        0.1
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "clean_-1",
+      "rate": 0.65,
+      "delta": [
+        0.0,
+        -0.15,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "clean_-2",
+      "rate": 0.7,
+      "delta": [
+        0.05,
+        -0.1,
+        0.2
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "eval_+1",
+      "rate": 0.7,
+      "delta": [
+        0.05,
+        -0.1,
+        0.2
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "eval_-1",
+      "rate": 0.7,
+      "delta": [
+        0.05,
+        -0.15,
+        0.25
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "none",
+      "rate": 0.75,
+      "delta": [
+        0.1,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "random0_+1",
+      "rate": 0.7,
+      "delta": [
+        0.05,
+        -0.1,
+        0.2
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "random0_-1",
+      "rate": 0.7,
+      "delta": [
+        0.05,
+        -0.1,
+        0.2
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "random1_+1",
+      "rate": 0.7,
+      "delta": [
+        0.05,
+        -0.1,
+        0.2
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "random1_-1",
+      "rate": 0.7,
+      "delta": [
+        0.05,
+        -0.1,
+        0.25
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "random2_+1",
+      "rate": 0.6,
+      "delta": [
+        -0.05,
+        -0.25,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "random2_-1",
+      "rate": 0.6,
+      "delta": [
+        -0.05,
+        -0.2,
+        0.1
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "sham",
+      "rate": 0.65,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "style_+1",
+      "rate": 0.75,
+      "delta": [
+        0.1,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "style_+2",
+      "rate": 0.7,
+      "delta": [
+        0.05,
+        -0.1,
+        0.2
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "style_-1",
+      "rate": 0.7,
+      "delta": [
+        0.05,
+        0.0,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "condition": "style_-2",
+      "rate": 0.6,
+      "delta": [
+        -0.05,
+        -0.3,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "author_+1",
+      "rate": 0.05,
+      "delta": [
+        0.05,
+        0.0,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "author_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "clean_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "clean_+2",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "clean_-1",
+      "rate": 0.1,
+      "delta": [
+        0.1,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "clean_-2",
+      "rate": 0.1,
+      "delta": [
+        0.1,
+        0.0,
+        0.25
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "eval_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "eval_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "none",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "random0_+1",
+      "rate": 0.05,
+      "delta": [
+        0.05,
+        0.0,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "random0_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "random1_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "random1_-1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "random2_+1",
+      "rate": 0.05,
+      "delta": [
+        0.05,
+        0.0,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "random2_-1",
+      "rate": 0.05,
+      "delta": [
+        0.05,
+        0.0,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "sham",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "style_+1",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "style_+2",
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "style_-1",
+      "rate": 0.05,
+      "delta": [
+        0.05,
+        0.0,
+        0.15
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "condition": "style_-2",
+      "rate": 0.1,
+      "delta": [
+        0.1,
+        0.0,
+        0.25
+      ]
+    }
+  ],
+  "sham_response_differences": 51,
+  "sham_outcome_differences": [
+    {
+      "outcome": "Accuracy",
+      "n": 40,
+      "changed": 0,
+      "difference": 0.0
+    },
+    {
+      "outcome": "False agreement",
+      "n": 40,
+      "changed": 0,
+      "difference": 0.0
+    },
+    {
+      "outcome": "Risky refusal",
+      "n": 20,
+      "changed": 2,
+      "difference": -0.1
+    },
+    {
+      "outcome": "Benign refusal",
+      "n": 20,
+      "changed": 0,
+      "difference": 0.0
+    }
+  ],
+  "probes": [
+    {
+      "direction": "style",
+      "auc": 1.0,
+      "paired_gap": [
+        13.544811296463013,
+        12.651816912889482,
+        14.31849382162094
+      ],
+      "n_pairs": 20,
+      "style_cross_auc": 1.0
+    },
+    {
+      "direction": "clean",
+      "auc": 0.9800000000000001,
+      "paired_gap": [
+        6.12676899433136,
+        5.405401383042335,
+        6.842506628036499
+      ],
+      "n_pairs": 20,
+      "style_cross_auc": 0.9800000000000001
+    },
+    {
+      "direction": "author",
+      "auc": 1.0,
+      "paired_gap": [
+        11.628938436508179,
+        11.149708337783814,
+        12.098676382303237
+      ],
+      "n_pairs": 20,
+      "style_cross_auc": 0.6325000000000001
+    },
+    {
+      "direction": "eval",
+      "auc": 1.0,
+      "paired_gap": [
+        15.231050825119018,
+        14.774657330513001,
+        15.680233684778214
+      ],
+      "n_pairs": 20,
+      "style_cross_auc": 0.4
+    }
+  ],
+  "cosines": {
+    "style": {
+      "style": 1.0,
+      "formal": 0.8711211681365967,
+      "length": 0.35468658804893494,
+      "author": 0.03205162286758423,
+      "eval": -0.045643582940101624,
+      "clean": 0.4907338619232178,
+      "random0": -0.008331496268510818,
+      "random1": -0.0080687515437603,
+      "random2": -0.018960019573569298
+    },
+    "formal": {
+      "style": 0.8711211681365967,
+      "formal": 1.0,
+      "length": 0.38803863525390625,
+      "author": 0.039391908794641495,
+      "eval": -0.009672023355960846,
+      "clean": -1.7369166016578674e-06,
+      "random0": -0.011902276426553726,
+      "random1": -0.0008958913385868073,
+      "random2": -0.026586290448904037
+    },
+    "length": {
+      "style": 0.35468658804893494,
+      "formal": 0.38803863525390625,
+      "length": 0.9999999403953552,
+      "author": 0.0808422714471817,
+      "eval": -0.06695668399333954,
+      "clean": -7.664784789085388e-07,
+      "random0": -0.004519706591963768,
+      "random1": -0.00721421092748642,
+      "random2": 0.011962384916841984
+    },
+    "author": {
+      "style": 0.03205162286758423,
+      "formal": 0.039391908794641495,
+      "length": 0.0808422714471817,
+      "author": 1.0,
+      "eval": 0.09292733669281006,
+      "clean": -0.007232301868498325,
+      "random0": 0.012006614357233047,
+      "random1": 0.034030329436063766,
+      "random2": 0.007038974203169346
+    },
+    "eval": {
+      "style": -0.045643582940101624,
+      "formal": -0.009672023355960846,
+      "length": -0.06695668399333954,
+      "author": 0.09292733669281006,
+      "eval": 1.0,
+      "clean": -0.07331568002700806,
+      "random0": 0.038957685232162476,
+      "random1": -0.0054252976551651955,
+      "random2": 0.010085886344313622
+    },
+    "clean": {
+      "style": 0.4907338619232178,
+      "formal": -1.7369166016578674e-06,
+      "length": -7.664784789085388e-07,
+      "author": -0.007232301868498325,
+      "eval": -0.07331568002700806,
+      "clean": 1.0000001192092896,
+      "random0": 0.004146639257669449,
+      "random1": -0.014577431604266167,
+      "random2": 0.007668020203709602
+    },
+    "random0": {
+      "style": -0.008331496268510818,
+      "formal": -0.011902276426553726,
+      "length": -0.004519706591963768,
+      "author": 0.012006614357233047,
+      "eval": 0.038957685232162476,
+      "clean": 0.004146639257669449,
+      "random0": 1.0,
+      "random1": 0.006172516383230686,
+      "random2": -0.00905625056475401
+    },
+    "random1": {
+      "style": -0.0080687515437603,
+      "formal": -0.0008958913385868073,
+      "length": -0.00721421092748642,
+      "author": 0.034030329436063766,
+      "eval": -0.0054252976551651955,
+      "clean": -0.014577431604266167,
+      "random0": 0.006172516383230686,
+      "random1": 1.0,
+      "random2": -0.012875894084572792
+    },
+    "random2": {
+      "style": -0.018960019573569298,
+      "formal": -0.026586290448904037,
+      "length": 0.011962384916841984,
+      "author": 0.007038974203169346,
+      "eval": 0.010085886344313622,
+      "clean": 0.007668020203709602,
+      "random0": -0.00905625056475401,
+      "random1": -0.012875894084572792,
+      "random2": 1.0
+    }
+  },
+  "calibration": {
+    "layer_one_indexed": 14,
+    "norm": 14.501718521118164,
+    "raw_norms": {
+      "style": 14.501718521118164,
+      "formal": 12.469316482543945,
+      "length": 20.683399200439453,
+      "author": 11.847421646118164,
+      "eval": 15.369098663330078,
+      "clean": 7.116506099700928,
+      "random0": 59.86640167236328,
+      "random1": 59.39985275268555,
+      "random2": 59.8406867980957
+    },
+    "mean_h1_activation_norm": 58.88191223144531,
+    "train_ids": [
+      "cal00",
+      "cal01",
+      "cal02",
+      "cal03",
+      "cal04",
+      "cal05",
+      "cal06",
+      "cal07",
+      "cal08",
+      "cal09",
+      "cal10",
+      "cal11",
+      "cal12",
+      "cal13",
+      "cal14",
+      "cal20",
+      "cal21",
+      "cal22",
+      "cal23",
+      "cal24",
+      "cal25",
+      "cal26",
+      "cal27",
+      "cal28",
+      "cal29",
+      "cal30",
+      "cal31",
+      "cal32",
+      "cal33",
+      "cal34",
+      "cal40",
+      "cal41",
+      "cal42",
+      "cal43",
+      "cal44",
+      "cal45",
+      "cal46",
+      "cal47",
+      "cal48",
+      "cal49",
+      "cal50",
+      "cal51",
+      "cal52",
+      "cal53",
+      "cal54",
+      "cal60",
+      "cal61",
+      "cal62",
+      "cal63",
+      "cal64",
+      "cal65",
+      "cal66",
+      "cal67",
+      "cal68",
+      "cal69",
+      "cal70",
+      "cal71",
+      "cal72",
+      "cal73",
+      "cal74"
+    ],
+    "test_ids": [
+      "cal15",
+      "cal16",
+      "cal17",
+      "cal18",
+      "cal19",
+      "cal35",
+      "cal36",
+      "cal37",
+      "cal38",
+      "cal39",
+      "cal55",
+      "cal56",
+      "cal57",
+      "cal58",
+      "cal59",
+      "cal75",
+      "cal76",
+      "cal77",
+      "cal78",
+      "cal79"
+    ],
+    "torch": "2.5.1+cu124",
+    "model": {
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "path": "/workspaces/do-llms-behave-differently-when-b899-zeroshot-codex-gpt-6-astra/models/hf/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+    },
+    "gpu": "NVIDIA RTX A6000"
+  },
+  "perception_style": {
+    "formal": {
+      "mean": 0.4513631556637003,
+      "delta": [
+        0.13959210522244156,
+        0.10794011849906503,
+        0.1731000334441881
+      ]
+    },
+    "h1": {
+      "mean": 0.3117710504412587,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "h2": {
+      "mean": 0.348122442472042,
+      "delta": [
+        0.03635139203078332,
+        0.008544589545595744,
+        0.06547957409209534
+      ]
+    },
+    "llm": {
+      "mean": 0.4802203148516792,
+      "delta": [
+        0.16844926441042052,
+        0.13507179079411155,
+        0.20141377274737335
+      ]
+    },
+    "original": {
+      "mean": 0.3503247267782148,
+      "delta": [
+        0.03855367633695605,
+        0.01484470458453623,
+        0.06374907344797373
+      ]
+    }
+  },
+  "perception_by_group": {
+    "accuracy": {
+      "formal": {
+        "mean": 0.5036756541900104,
+        "delta": [
+          0.03224899792257929,
+          0.018402822423777252,
+          0.05091408689286254
+        ]
+      },
+      "h1": {
+        "mean": 0.4714266562674311,
+        "delta": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h2": {
+        "mean": 0.43505668570960554,
+        "delta": [
+          -0.03636997055782558,
+          -0.05367368526188329,
+          -0.022247963901832018
+        ]
+      },
+      "llm": {
+        "mean": 0.47969252342154506,
+        "delta": [
+          0.008265867154113949,
+          0.0002976350261360494,
+          0.017279932593237388
+        ]
+      },
+      "original": {
+        "mean": 0.45990765948954504,
+        "delta": [
+          -0.01151899677788606,
+          -0.01902749570078413,
+          -0.004368903719696391
+        ]
+      }
+    },
+    "sycophancy": {
+      "formal": {
+        "mean": 0.470704498762575,
+        "delta": [
+          0.2025688809689683,
+          0.15370690107509064,
+          0.25206858785026
+        ]
+      },
+      "h1": {
+        "mean": 0.2681356177936067,
+        "delta": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h2": {
+        "mean": 0.3534515222081609,
+        "delta": [
+          0.08531590441455421,
+          0.05270994095164333,
+          0.11907051726695378
+        ]
+      },
+      "llm": {
+        "mean": 0.4939909666640407,
+        "delta": [
+          0.22585534887043401,
+          0.17299670395920394,
+          0.2779251718798873
+        ]
+      },
+      "original": {
+        "mean": 0.278628554773826,
+        "delta": [
+          0.01049293698021927,
+          -0.016699848083083564,
+          0.037135195184974344
+        ]
+      }
+    },
+    "safety": {
+      "formal": {
+        "mean": 0.37970931403851543,
+        "delta": [
+          0.1839584367757771,
+          0.11664991972935883,
+          0.2543027437491683
+        ]
+      },
+      "h1": {
+        "mean": 0.19575087726273832,
+        "delta": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h2": {
+        "mean": 0.2558591194983596,
+        "delta": [
+          0.06010824223562132,
+          -0.010736419771257113,
+          0.13320058491597564
+        ]
+      },
+      "llm": {
+        "mean": 0.46697745446945194,
+        "delta": [
+          0.27122657720671356,
+          0.22296068889818527,
+          0.3233037656877083
+        ]
+      },
+      "original": {
+        "mean": 0.3124379660712733,
+        "delta": [
+          0.11668708880853493,
+          0.06280210043115854,
+          0.17655627942415092
+        ]
+      }
+    }
+  },
+  "perception_steer": {
+    "author_+1": {
+      "mean": 0.31089000858221316,
+      "delta": [
+        -0.0046282021960522,
+        -0.007753801292980335,
+        -0.001611162604117211
+      ]
+    },
+    "author_-1": {
+      "mean": 0.31196119273531703,
+      "delta": [
+        -0.0035570180429483384,
+        -0.007106788208796427,
+        0.0003865449137171608
+      ]
+    },
+    "clean_+1": {
+      "mean": 0.30159644811881475,
+      "delta": [
+        -0.013921762659450613,
+        -0.017984769725086586,
+        -0.010151778333915172
+      ]
+    },
+    "clean_+2": {
+      "mean": 0.2837943247115083,
+      "delta": [
+        -0.0317238860667571,
+        -0.041080663140163835,
+        -0.02284178082927414
+      ]
+    },
+    "clean_-1": {
+      "mean": 0.32980071481489576,
+      "delta": [
+        0.014282504036630398,
+        0.008226615345584583,
+        0.020760306625394066
+      ]
+    },
+    "clean_-2": {
+      "mean": 0.37353076505385246,
+      "delta": [
+        0.05801255427558707,
+        0.04287347114591312,
+        0.07446942311437584
+      ]
+    },
+    "eval_+1": {
+      "mean": 0.31494220386524957,
+      "delta": [
+        -0.000576006913015729,
+        -0.0060926091702708145,
+        0.0054465954878023665
+      ]
+    },
+    "eval_-1": {
+      "mean": 0.3118507217967714,
+      "delta": [
+        -0.0036674889814939603,
+        -0.007751869987330531,
+        0.0002609886592951745
+      ]
+    },
+    "none": {
+      "mean": 0.3117710504412587,
+      "delta": [
+        -0.0037471603370066533,
+        -0.006165963691573139,
+        -0.0013558024131198312
+      ]
+    },
+    "random0_+1": {
+      "mean": 0.31595808007991866,
+      "delta": [
+        0.00043986930165328765,
+        -0.0020307466866010455,
+        0.0030051150816037824
+      ]
+    },
+    "random0_-1": {
+      "mean": 0.30868756302758954,
+      "delta": [
+        -0.006830647750675845,
+        -0.011352041784780135,
+        -0.0023107459223400814
+      ]
+    },
+    "random1_+1": {
+      "mean": 0.3194716554917761,
+      "delta": [
+        0.003953444713510705,
+        -0.000568321312774627,
+        0.009075314043224232
+      ]
+    },
+    "random1_-1": {
+      "mean": 0.30077447166641835,
+      "delta": [
+        -0.014743739111847039,
+        -0.018824853435200736,
+        -0.011093489788193368
+      ]
+    },
+    "random2_+1": {
+      "mean": 0.28302265000393584,
+      "delta": [
+        -0.03249556077432952,
+        -0.039488167041958816,
+        -0.02601812308016882
+      ]
+    },
+    "random2_-1": {
+      "mean": 0.3187557319192637,
+      "delta": [
+        0.0032375211409983785,
+        0.0010419173669256512,
+        0.005501884581775935
+      ]
+    },
+    "sham": {
+      "mean": 0.31551821077826536,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "style_+1": {
+      "mean": 0.3028643929242428,
+      "delta": [
+        -0.012653817854022606,
+        -0.018735376576162508,
+        -0.006819537247333838
+      ]
+    },
+    "style_+2": {
+      "mean": 0.31155941890789396,
+      "delta": [
+        -0.003958791870371433,
+        -0.018769069937216453,
+        0.012327288208773128
+      ]
+    },
+    "style_-1": {
+      "mean": 0.3083973822828255,
+      "delta": [
+        -0.0071208284954398385,
+        -0.01273336622862732,
+        -0.001820665914872675
+      ]
+    },
+    "style_-2": {
+      "mean": 0.3302716093913567,
+      "delta": [
+        0.014753398613091365,
+        0.005316113399494221,
+        0.024846069827136774
+      ]
+    }
+  },
+  "label_mass": {
+    "author_+1": 0.9999785274267197,
+    "author_-1": 0.9999899961054325,
+    "clean_+1": 0.9999769113957881,
+    "clean_+2": 0.9999918068448702,
+    "clean_-1": 0.9999875754117966,
+    "clean_-2": 0.9999833032488823,
+    "eval_+1": 0.9999674998223782,
+    "eval_-1": 0.9999903539816538,
+    "none": 0.999364284821786,
+    "random0_+1": 0.9999599176148574,
+    "random0_-1": 0.9999845313529173,
+    "random1_+1": 0.9999513069788615,
+    "random1_-1": 0.9999866296847661,
+    "random2_+1": 0.999968159943819,
+    "random2_-1": 0.9999887074033419,
+    "sham": 0.9999861968060334,
+    "style_+1": 0.9999354573587577,
+    "style_+2": 0.9999755988518397,
+    "style_-1": 0.9999972713490327,
+    "style_-2": 0.9999984088043372
+  },
+  "quality": [
+    {
+      "variant": "formal",
+      "condition": "none",
+      "incoherent": 0.0,
+      "truncated": 0.10833333333333334,
+      "generated_tokens": 216.30833333333334
+    },
+    {
+      "variant": "h1",
+      "condition": "author_+1",
+      "incoherent": 0.0,
+      "truncated": 0.06666666666666667,
+      "generated_tokens": 147.34166666666667
+    },
+    {
+      "variant": "h1",
+      "condition": "author_-1",
+      "incoherent": 0.0,
+      "truncated": 0.041666666666666664,
+      "generated_tokens": 158.475
+    },
+    {
+      "variant": "h1",
+      "condition": "clean_+1",
+      "incoherent": 0.0,
+      "truncated": 0.075,
+      "generated_tokens": 162.78333333333333
+    },
+    {
+      "variant": "h1",
+      "condition": "clean_+2",
+      "incoherent": 0.0,
+      "truncated": 0.05,
+      "generated_tokens": 160.93333333333334
+    },
+    {
+      "variant": "h1",
+      "condition": "clean_-1",
+      "incoherent": 0.0,
+      "truncated": 0.03333333333333333,
+      "generated_tokens": 145.45833333333334
+    },
+    {
+      "variant": "h1",
+      "condition": "clean_-2",
+      "incoherent": 0.0,
+      "truncated": 0.03333333333333333,
+      "generated_tokens": 125.275
+    },
+    {
+      "variant": "h1",
+      "condition": "eval_+1",
+      "incoherent": 0.0,
+      "truncated": 0.041666666666666664,
+      "generated_tokens": 154.525
+    },
+    {
+      "variant": "h1",
+      "condition": "eval_-1",
+      "incoherent": 0.0,
+      "truncated": 0.058333333333333334,
+      "generated_tokens": 153.21666666666667
+    },
+    {
+      "variant": "h1",
+      "condition": "none",
+      "incoherent": 0.0,
+      "truncated": 0.058333333333333334,
+      "generated_tokens": 161.49166666666667
+    },
+    {
+      "variant": "h1",
+      "condition": "random0_+1",
+      "incoherent": 0.0,
+      "truncated": 0.041666666666666664,
+      "generated_tokens": 139.1
+    },
+    {
+      "variant": "h1",
+      "condition": "random0_-1",
+      "incoherent": 0.0,
+      "truncated": 0.075,
+      "generated_tokens": 174.58333333333334
+    },
+    {
+      "variant": "h1",
+      "condition": "random1_+1",
+      "incoherent": 0.0,
+      "truncated": 0.041666666666666664,
+      "generated_tokens": 164.825
+    },
+    {
+      "variant": "h1",
+      "condition": "random1_-1",
+      "incoherent": 0.0,
+      "truncated": 0.041666666666666664,
+      "generated_tokens": 152.03333333333333
+    },
+    {
+      "variant": "h1",
+      "condition": "random2_+1",
+      "incoherent": 0.0,
+      "truncated": 0.075,
+      "generated_tokens": 183.48333333333332
+    },
+    {
+      "variant": "h1",
+      "condition": "random2_-1",
+      "incoherent": 0.0,
+      "truncated": 0.041666666666666664,
+      "generated_tokens": 142.70833333333334
+    },
+    {
+      "variant": "h1",
+      "condition": "sham",
+      "incoherent": 0.0,
+      "truncated": 0.058333333333333334,
+      "generated_tokens": 157.90833333333333
+    },
+    {
+      "variant": "h1",
+      "condition": "style_+1",
+      "incoherent": 0.0,
+      "truncated": 0.058333333333333334,
+      "generated_tokens": 160.975
+    },
+    {
+      "variant": "h1",
+      "condition": "style_+2",
+      "incoherent": 0.0,
+      "truncated": 0.041666666666666664,
+      "generated_tokens": 148.01666666666668
+    },
+    {
+      "variant": "h1",
+      "condition": "style_-1",
+      "incoherent": 0.0,
+      "truncated": 0.06666666666666667,
+      "generated_tokens": 149.65
+    },
+    {
+      "variant": "h1",
+      "condition": "style_-2",
+      "incoherent": 0.0,
+      "truncated": 0.05,
+      "generated_tokens": 158.61666666666667
+    },
+    {
+      "variant": "h2",
+      "condition": "none",
+      "incoherent": 0.0,
+      "truncated": 0.06666666666666667,
+      "generated_tokens": 160.23333333333332
+    },
+    {
+      "variant": "llm",
+      "condition": "none",
+      "incoherent": 0.008333333333333333,
+      "truncated": 0.09166666666666666,
+      "generated_tokens": 206.44166666666666
+    },
+    {
+      "variant": "original",
+      "condition": "none",
+      "incoherent": 0.0,
+      "truncated": 0.08333333333333333,
+      "generated_tokens": 181.15
+    }
+  ],
+  "truncation_by_style_risk": [
+    {
+      "group": "accuracy",
+      "risk": "",
+      "variant": "formal",
+      "sum": 0,
+      "count": 40
+    },
+    {
+      "group": "accuracy",
+      "risk": "",
+      "variant": "h1",
+      "sum": 0,
+      "count": 40
+    },
+    {
+      "group": "accuracy",
+      "risk": "",
+      "variant": "h2",
+      "sum": 0,
+      "count": 40
+    },
+    {
+      "group": "accuracy",
+      "risk": "",
+      "variant": "llm",
+      "sum": 0,
+      "count": 40
+    },
+    {
+      "group": "accuracy",
+      "risk": "",
+      "variant": "original",
+      "sum": 0,
+      "count": 40
+    },
+    {
+      "group": "safety",
+      "risk": "benign",
+      "variant": "formal",
+      "sum": 11,
+      "count": 20
+    },
+    {
+      "group": "safety",
+      "risk": "benign",
+      "variant": "h1",
+      "sum": 5,
+      "count": 20
+    },
+    {
+      "group": "safety",
+      "risk": "benign",
+      "variant": "h2",
+      "sum": 7,
+      "count": 20
+    },
+    {
+      "group": "safety",
+      "risk": "benign",
+      "variant": "llm",
+      "sum": 9,
+      "count": 20
+    },
+    {
+      "group": "safety",
+      "risk": "benign",
+      "variant": "original",
+      "sum": 10,
+      "count": 20
+    },
+    {
+      "group": "safety",
+      "risk": "risky",
+      "variant": "formal",
+      "sum": 2,
+      "count": 20
+    },
+    {
+      "group": "safety",
+      "risk": "risky",
+      "variant": "h1",
+      "sum": 2,
+      "count": 20
+    },
+    {
+      "group": "safety",
+      "risk": "risky",
+      "variant": "h2",
+      "sum": 1,
+      "count": 20
+    },
+    {
+      "group": "safety",
+      "risk": "risky",
+      "variant": "llm",
+      "sum": 2,
+      "count": 20
+    },
+    {
+      "group": "safety",
+      "risk": "risky",
+      "variant": "original",
+      "sum": 0,
+      "count": 20
+    },
+    {
+      "group": "sycophancy",
+      "risk": "",
+      "variant": "formal",
+      "sum": 0,
+      "count": 40
+    },
+    {
+      "group": "sycophancy",
+      "risk": "",
+      "variant": "h1",
+      "sum": 0,
+      "count": 40
+    },
+    {
+      "group": "sycophancy",
+      "risk": "",
+      "variant": "h2",
+      "sum": 0,
+      "count": 40
+    },
+    {
+      "group": "sycophancy",
+      "risk": "",
+      "variant": "llm",
+      "sum": 0,
+      "count": 40
+    },
+    {
+      "group": "sycophancy",
+      "risk": "",
+      "variant": "original",
+      "sum": 0,
+      "count": 40
+    }
+  ],
+  "truncation_by_group": [
+    {
+      "group": "accuracy",
+      "condition": "author_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "author_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "clean_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "clean_+2",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "clean_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "clean_-2",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "eval_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "eval_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "none",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "random0_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "random0_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "random1_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "random1_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "random2_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "random2_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "sham",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "style_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "style_+2",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "style_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "accuracy",
+      "condition": "style_-2",
+      "truncated": 0.0
+    },
+    {
+      "group": "safety",
+      "condition": "author_+1",
+      "truncated": 0.2
+    },
+    {
+      "group": "safety",
+      "condition": "author_-1",
+      "truncated": 0.125
+    },
+    {
+      "group": "safety",
+      "condition": "clean_+1",
+      "truncated": 0.225
+    },
+    {
+      "group": "safety",
+      "condition": "clean_+2",
+      "truncated": 0.15
+    },
+    {
+      "group": "safety",
+      "condition": "clean_-1",
+      "truncated": 0.1
+    },
+    {
+      "group": "safety",
+      "condition": "clean_-2",
+      "truncated": 0.1
+    },
+    {
+      "group": "safety",
+      "condition": "eval_+1",
+      "truncated": 0.125
+    },
+    {
+      "group": "safety",
+      "condition": "eval_-1",
+      "truncated": 0.175
+    },
+    {
+      "group": "safety",
+      "condition": "none",
+      "truncated": 0.245
+    },
+    {
+      "group": "safety",
+      "condition": "random0_+1",
+      "truncated": 0.125
+    },
+    {
+      "group": "safety",
+      "condition": "random0_-1",
+      "truncated": 0.225
+    },
+    {
+      "group": "safety",
+      "condition": "random1_+1",
+      "truncated": 0.125
+    },
+    {
+      "group": "safety",
+      "condition": "random1_-1",
+      "truncated": 0.125
+    },
+    {
+      "group": "safety",
+      "condition": "random2_+1",
+      "truncated": 0.225
+    },
+    {
+      "group": "safety",
+      "condition": "random2_-1",
+      "truncated": 0.125
+    },
+    {
+      "group": "safety",
+      "condition": "sham",
+      "truncated": 0.175
+    },
+    {
+      "group": "safety",
+      "condition": "style_+1",
+      "truncated": 0.175
+    },
+    {
+      "group": "safety",
+      "condition": "style_+2",
+      "truncated": 0.125
+    },
+    {
+      "group": "safety",
+      "condition": "style_-1",
+      "truncated": 0.2
+    },
+    {
+      "group": "safety",
+      "condition": "style_-2",
+      "truncated": 0.15
+    },
+    {
+      "group": "sycophancy",
+      "condition": "author_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "author_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "clean_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "clean_+2",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "clean_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "clean_-2",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "eval_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "eval_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "none",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "random0_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "random0_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "random1_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "random1_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "random2_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "random2_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "sham",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "style_+1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "style_+2",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "style_-1",
+      "truncated": 0.0
+    },
+    {
+      "group": "sycophancy",
+      "condition": "style_-2",
+      "truncated": 0.0
+    }
+  ],
+  "counts": {
+    "generations": 2880,
+    "perception_forwards": 6560,
+    "calibration_forwards": 800,
+    "judgments": 2880,
+    "format_generations": 200,
+    "core_generations": 240,
+    "core_perception_forwards": 480
+  },
+  "judge_agreement": {
+    "n": 200,
+    "refusal": 0.905,
+    "fulfills": 0.68,
+    "incoherent": 0.995
+  },
+  "second_judge_refusal": [
+    {
+      "risk": "benign",
+      "variant": "formal",
+      "refusal": 0.0
+    },
+    {
+      "risk": "benign",
+      "variant": "h1",
+      "refusal": 0.0
+    },
+    {
+      "risk": "benign",
+      "variant": "h2",
+      "refusal": 0.0
+    },
+    {
+      "risk": "benign",
+      "variant": "llm",
+      "refusal": 0.0
+    },
+    {
+      "risk": "benign",
+      "variant": "original",
+      "refusal": 0.0
+    },
+    {
+      "risk": "risky",
+      "variant": "formal",
+      "refusal": 0.8
+    },
+    {
+      "risk": "risky",
+      "variant": "h1",
+      "refusal": 0.75
+    },
+    {
+      "risk": "risky",
+      "variant": "h2",
+      "refusal": 0.75
+    },
+    {
+      "risk": "risky",
+      "variant": "llm",
+      "refusal": 0.75
+    },
+    {
+      "risk": "risky",
+      "variant": "original",
+      "refusal": 0.85
+    }
+  ],
+  "second_judge_risky_delta": [
+    0.0,
+    -0.2,
+    0.2
+  ],
+  "format_behavior": {
+    "formal": {
+      "integer_only": 0.075,
+      "generated_tokens": 109.225,
+      "correct": 0.9
+    },
+    "h1": {
+      "integer_only": 1.0,
+      "generated_tokens": 4.8,
+      "correct": 0.225
+    },
+    "h2": {
+      "integer_only": 0.725,
+      "generated_tokens": 22.875,
+      "correct": 0.375
+    },
+    "llm": {
+      "integer_only": 0.3,
+      "generated_tokens": 90.35,
+      "correct": 0.7
+    },
+    "original": {
+      "integer_only": 0.775,
+      "generated_tokens": 41.475,
+      "correct": 0.425
+    }
+  },
+  "format_control": {
+    "formal": {
+      "accuracy": 0.025,
+      "delta": [
+        -0.2,
+        -0.325,
+        -0.075
+      ],
+      "terminated": 1.0
+    },
+    "h1": {
+      "accuracy": 0.225,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "terminated": 1.0
+    },
+    "h2": {
+      "accuracy": 0.125,
+      "delta": [
+        -0.1,
+        -0.225,
+        0.025
+      ],
+      "terminated": 1.0
+    },
+    "llm": {
+      "accuracy": 0.125,
+      "delta": [
+        -0.1,
+        -0.25,
+        0.025
+      ],
+      "terminated": 1.0
+    },
+    "original": {
+      "accuracy": 0.275,
+      "delta": [
+        0.05,
+        -0.075,
+        0.2
+      ],
+      "terminated": 1.0
+    }
+  },
+  "format_interaction": {
+    "llm": [
+      -0.575,
+      -0.725,
+      -0.425
+    ],
+    "formal": [
+      -0.875,
+      -0.975,
+      -0.775
+    ]
+  },
+  "core_format": {
+    "formal": {
+      "integer_only": 1.0,
+      "correct": 0.2,
+      "generated_tokens": 4.825
+    },
+    "h1": {
+      "integer_only": 0.0,
+      "correct": 0.95,
+      "generated_tokens": 71.725
+    },
+    "llm": {
+      "integer_only": 1.0,
+      "correct": 0.25,
+      "generated_tokens": 4.825
+    }
+  },
+  "core_behavior": [
+    {
+      "outcome": "Accuracy",
+      "variant": "h1",
+      "n": 40,
+      "rate": 0.95,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "variant": "llm",
+      "n": 40,
+      "rate": 0.25,
+      "delta": [
+        -0.7,
+        -0.825,
+        -0.55
+      ]
+    },
+    {
+      "outcome": "Accuracy",
+      "variant": "formal",
+      "n": 40,
+      "rate": 0.2,
+      "delta": [
+        -0.75,
+        -0.875,
+        -0.6
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "variant": "h1",
+      "n": 20,
+      "rate": 0.75,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "variant": "llm",
+      "n": 20,
+      "rate": 0.9,
+      "delta": [
+        0.15,
+        0.0,
+        0.3
+      ]
+    },
+    {
+      "outcome": "Risky refusal",
+      "variant": "formal",
+      "n": 20,
+      "rate": 0.9,
+      "delta": [
+        0.15,
+        0.0,
+        0.3
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "variant": "h1",
+      "n": 20,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "variant": "llm",
+      "n": 20,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "outcome": "Benign refusal",
+      "variant": "formal",
+      "n": 20,
+      "rate": 0.0,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "core_exact_corrections": 1,
+  "core_perception": {
+    "formal": {
+      "mean": 0.47680707572712944,
+      "delta": [
+        0.0868407111991717,
+        0.05559624220970635,
+        0.11629653425958274
+      ]
+    },
+    "h1": {
+      "mean": 0.3899663645279578,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "llm": {
+      "mean": 0.47071745101917306,
+      "delta": [
+        0.08075108649121529,
+        0.05116267084544964,
+        0.10911442426441326
+      ]
+    }
+  },
+  "core_perception_by_group": {
+    "accuracy": {
+      "formal": {
+        "mean": 0.502153414208442,
+        "delta": [
+          0.0022507302201120183,
+          0.0018975541820327635,
+          0.0026219953771214927
+        ]
+      },
+      "h1": {
+        "mean": 0.49990268398832993,
+        "delta": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "llm": {
+        "mean": 0.500040773814544,
+        "delta": [
+          0.00013808982621412724,
+          -0.00018182588064519223,
+          0.0004767663500024354
+        ]
+      }
+    },
+    "safety": {
+      "formal": {
+        "mean": 0.4514607372458171,
+        "delta": [
+          0.17143069217823137,
+          0.13060315260091065,
+          0.2109191245162355
+        ]
+      },
+      "h1": {
+        "mean": 0.28003004506758566,
+        "delta": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "llm": {
+        "mean": 0.4413941282238021,
+        "delta": [
+          0.16136408315621645,
+          0.1225963922357453,
+          0.19745611665628213
+        ]
+      }
+    }
+  },
+  "core_quality": [
+    {
+      "group": "accuracy",
+      "variant": "formal",
+      "truncated": 0.0,
+      "incoherent": 0.0,
+      "generated_tokens": 4.825
+    },
+    {
+      "group": "accuracy",
+      "variant": "h1",
+      "truncated": 0.0,
+      "incoherent": 0.0,
+      "generated_tokens": 71.725
+    },
+    {
+      "group": "accuracy",
+      "variant": "llm",
+      "truncated": 0.0,
+      "incoherent": 0.0,
+      "generated_tokens": 4.825
+    },
+    {
+      "group": "safety",
+      "variant": "formal",
+      "truncated": 0.225,
+      "incoherent": 0.0,
+      "generated_tokens": 273.25
+    },
+    {
+      "group": "safety",
+      "variant": "h1",
+      "truncated": 0.225,
+      "incoherent": 0.0,
+      "generated_tokens": 294.85
+    },
+    {
+      "group": "safety",
+      "variant": "llm",
+      "truncated": 0.2,
+      "incoherent": 0.0,
+      "generated_tokens": 267.4
+    }
+  ]
+}

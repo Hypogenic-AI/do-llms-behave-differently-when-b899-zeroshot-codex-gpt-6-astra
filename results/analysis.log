@@ -1,0 +1,157 @@
+{
+  "counts": {
+    "generations": 2880,
+    "perception_forwards": 6560,
+    "calibration_forwards": 800,
+    "judgments": 2880,
+    "format_generations": 200,
+    "core_generations": 240,
+    "core_perception_forwards": 480
+  },
+  "primary": [
+    {
+      "outcome": "Accuracy",
+      "n": 40,
+      "delta": [
+        0.475,
+        0.325,
+        0.625
+      ],
+      "discordant": 19,
+      "up": 19,
+      "p": 3.814697265625e-06,
+      "holm_p": 1.52587890625e-05
+    },
+    {
+      "outcome": "False agreement",
+      "n": 40,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "discordant": 0,
+      "up": 0,
+      "p": 1.0,
+      "holm_p": 1
+    },
+    {
+      "outcome": "Risky refusal",
+      "n": 20,
+      "delta": [
+        -0.1,
+        -0.35,
+        0.15
+      ],
+      "discordant": 6,
+      "up": 2,
+      "p": 0.6875,
+      "holm_p": 1
+    },
+    {
+      "outcome": "Benign refusal",
+      "n": 20,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "discordant": 0,
+      "up": 0,
+      "p": 1.0,
+      "holm_p": 1
+    }
+  ],
+  "probes": [
+    {
+      "direction": "style",
+      "auc": 1.0,
+      "paired_gap": [
+        13.544811296463013,
+        12.651816912889482,
+        14.31849382162094
+      ],
+      "n_pairs": 20,
+      "style_cross_auc": 1.0
+    },
+    {
+      "direction": "clean",
+      "auc": 0.9800000000000001,
+      "paired_gap": [
+        6.12676899433136,
+        5.405401383042335,
+        6.842506628036499
+      ],
+      "n_pairs": 20,
+      "style_cross_auc": 0.9800000000000001
+    },
+    {
+      "direction": "author",
+      "auc": 1.0,
+      "paired_gap": [
+        11.628938436508179,
+        11.149708337783814,
+        12.098676382303237
+      ],
+      "n_pairs": 20,
+      "style_cross_auc": 0.6325000000000001
+    },
+    {
+      "direction": "eval",
+      "auc": 1.0,
+      "paired_gap": [
+        15.231050825119018,
+        14.774657330513001,
+        15.680233684778214
+      ],
+      "n_pairs": 20,
+      "style_cross_auc": 0.4
+    }
+  ],
+  "perception_style": {
+    "formal": {
+      "mean": 0.4513631556637003,
+      "delta": [
+        0.13959210522244156,
+        0.10794011849906503,
+        0.1731000334441881
+      ]
+    },
+    "h1": {
+      "mean": 0.3117710504412587,
+      "delta": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "h2": {
+      "mean": 0.348122442472042,
+      "delta": [
+        0.03635139203078332,
+        0.008544589545595744,
+        0.06547957409209534
+      ]
+    },
+    "llm": {
+      "mean": 0.4802203148516792,
+      "delta": [
+        0.16844926441042052,
+        0.13507179079411155,
+        0.20141377274737335
+      ]
+    },
+    "original": {
+      "mean": 0.3503247267782148,
+      "delta": [
+        0.03855367633695605,
+        0.01484470458453623,
+        0.06374907344797373
+      ]
+    }
+  },
+  "strict_numeric": {
+    "n": 853,
+    "disagreements": 2
+  }
+}

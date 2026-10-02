@@ -1,0 +1,60 @@
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.15s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.06it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.14it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.22it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.15it/s]
+/workspaces/do-llms-behave-differently-when-b899-zeroshot-codex-gpt-6-astra/.venv/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:631: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/workspaces/do-llms-behave-differently-when-b899-zeroshot-codex-gpt-6-astra/.venv/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:636: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/workspaces/do-llms-behave-differently-when-b899-zeroshot-codex-gpt-6-astra/.venv/lib/python3.12/site-packages/transformers/generation/configuration_utils.py:653: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+text accuracy none 12 200
+text accuracy none 24 200
+text accuracy none 36 200
+text accuracy none 48 200
+text accuracy none 60 200
+text accuracy none 72 200
+text accuracy none 84 200
+text accuracy none 96 200
+text accuracy none 108 200
+text accuracy none 120 200
+text accuracy none 132 200
+text accuracy none 144 200
+text accuracy none 156 200
+text accuracy none 168 200
+text accuracy none 180 200
+text accuracy none 192 200
+text accuracy none 200 200
+text sycophancy none 12 200
+text sycophancy none 24 200
+text sycophancy none 36 200
+text sycophancy none 48 200
+text sycophancy none 60 200
+text sycophancy none 72 200
+text sycophancy none 84 200
+text sycophancy none 96 200
+text sycophancy none 108 200
+text sycophancy none 120 200
+text sycophancy none 132 200
+text sycophancy none 144 200
+text sycophancy none 156 200
+text sycophancy none 168 200
+text sycophancy none 180 200
+text sycophancy none 192 200
+text sycophancy none 200 200
+text safety none 12 200
+text safety none 24 200
+text safety none 36 200
+text safety none 48 200
+text safety none 60 200
+text safety none 72 200
+text safety none 84 200
+text safety none 96 200
+text safety none 108 200
+text safety none 120 200
+text safety none 132 200
+text safety none 144 200
+text safety none 156 200
+text safety none 168 200
+text safety none 180 200
+text safety none 192 200
+text safety none 200 200
+DONE text

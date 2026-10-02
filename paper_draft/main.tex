@@ -1,0 +1,108 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{times,amsmath,amssymb,booktabs,graphicx,microtype}
+\usepackage[round,authoryear]{natbib}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks=true,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
+\usepackage{url}
+\newcommand{\model}{Qwen2.5-7B-Instruct}
+\title{Style Is Not Authorship: Controlled Prompt Rewrites and\ Activation Interventions in a Language Model}
+\author{Autonomous research study\\\small Reproducible experimental report}
+\date{October 2026}
+\begin{document}
+\raggedbottom
+\maketitle
+\begin{abstract}
+Does an assistant behave differently when a request looks machine-written? We distinguish actual authorship, perceived authorship, and surface style using controlled rewrites and fixed-text activation interventions in \model. All requests are synthetic; the study tests human-like versus structured machine-like wording, not genuine human provenance. We compare original requests, two conversational paraphrases, structured rewrites, and formal-prose controls across arithmetic accuracy, agreement with false arithmetic beliefs, and refusal of risky and benign requests. Directions learned on separate benign topics are contrasted with explicit authorship and evaluation-context directions, nuisance-projected variants, and norm-matched random controls. \input{abstract_results.tex}
+\end{abstract}
+
+\section{Introduction}
+Synthetic requests appear in model-written evaluations, automated auditing, and multi-agent workflows. If they elicit different responses from ordinary conversational requests, evaluation findings may depend on how prompts were produced. But ``written by an LLM'' and ``reads like an LLM'' are different variables. Humans can write structured specifications, and language models can imitate casual prose. Moreover, rewriting can alter clarity, length, politeness, or substantive intent. A comparison of two prompt sets alone cannot identify an authorship mechanism.
+
+We study three questions. First, do matched conversational and structured rewrites change observable responses? Second, does the responding model's authorship self-report change in the intended direction? Third, do internal interventions learned from style contrasts change behavior with the request text held fixed, and how do those directions relate to formality, explicit authorship attribution, and evaluation context?
+
+The contribution is a reproducible, single-model mechanistic pilot with controls and explicit identification limits. It is not a claim that synthetic text reliably reveals its true author, nor a comprehensive safety benchmark. We preserve raw requests, API responses, local generations, hidden states, vectors, judgments, and analysis scripts. Importantly, we treat decodability, self-report, and causal behavioral effects as distinct measurements. An intervention can change an output without demonstrating that the model represents an author's identity.
+
+\section{Related work}
+\paragraph{Evaluation awareness.}
+\citet{arxiv250523836} study discrimination between evaluation and deployment transcripts. This establishes a relevant capability but does not isolate authorship style. \citet{arxiv250514617} probe and steer test awareness while measuring safety-related behavior; \citet{arxiv250701786} investigate evaluation representations in an instruction-tuned model. More recently, \citet{arxiv260821766} distinguish internal representations, verbalization, and effects of steering. These distinctions motivate our separate calibration, authorship readout, and response measurements. Our evaluation direction is learned from explicit textual context labels, so it is a local proxy rather than a reproduction of those papers' natural-transcript probes.
+
+\paragraph{Text-source detection and preference.}
+RepreGuard extracts statistical differences in representations to detect machine-generated text \citep{arxiv250813152}; \citet{arxiv260824780} investigate linear probes and cross-domain machine-text detection. Neither detection accuracy nor linear separability alone implies that a responding assistant uses perceived authorship to choose its behavior. \citet{arxiv240413076} study recognition and preference for a model's own generations. AI--AI bias in communication judgments \citep{arxiv240712856} and self-preferencing in hiring \citep{arxiv250900462} concern evaluation of candidate text, rather than the source of an instruction. Our study concerns the latter, while acknowledging that we do not manipulate true provenance.
+
+\paragraph{Prompt construction and behavioral mechanisms.}
+Prompt formatting can affect model behavior even without an authorship explanation \citep{arxiv231011324}. \citet{arxiv260811008} directly compare prompt-construction strategies in political-stance measurement and find construction-dependent estimates. That study makes it particularly important to include a conversational paraphrase control and to check realism rather than equate templating with human authorship. Sycophancy research motivates measuring agreement with a user's false belief \citep{arxiv231013548}; our arithmetic implementation is deliberately narrower than general sycophancy. Work identifying a refusal-related direction \citep{arxiv240611717} motivates fixed-text interventions, while also warning that a direction with a behavioral effect need not encode the concept used to label it.
+
+\section{Design and identification}
+Let $c$ be a canonical request, $s$ its wording condition, $x(c,s)$ the resulting text, $h(x)$ an activation, and $Y$ a response outcome. The paired rewrite contrast is
+\begin{equation}
+\Delta_s=\frac{1}{N}\sum_i\left[Y(x(c_i,s))-Y(x(c_i,H1))\right].
+\end{equation}
+This contrast controls request identity but only approximately controls meaning. It also changes observable linguistic features. We therefore do not interpret $\Delta_L$ as an effect of perceived authorship.
+
+The activation contrast instead compares $Y(x;h+\alpha d)$ with $Y(x;h)$ for the same text $x$. This isolates an effect of the implemented intervention on the network. Identifying this effect as \emph{authorship-mediated} would additionally require that $d$ changes the relevant authorship representation, does not materially alter competing features or general competence, and transfers to a valid authorship readout. We test pieces of this argument, but do not assume its exclusion restrictions.
+
+\subsection{Items and wording conditions}
+We construct 120 behavioral requests: 40 two-digit multiplication-minus-subtraction problems; 40 independently sampled arithmetic problems with an asserted, incorrect answer and a request to confirm or correct it; and 20 pairs of risky and benign requests. Arithmetic answers are computed directly in code. The false answers differ by a signed small or larger offset. Safety pairs concern deception, privacy, coercion, or rule evasion and corresponding benign assistance. They are researcher-designed examples, not a representative policy taxonomy, and ``risky'' is a design label rather than a judgment that all cases require refusal.
+
+Every item has five variants: original (O), conversational paraphrase (H1), another conversational paraphrase (H2), structured LLM-like rewrite (L), and formal prose (F). GPT-4.1-mini, accessed through OpenRouter, generates all four rewrites in one call with explicit requirements to preserve facts, intent, stance, authorization, and requested output. It is instructed to match length approximately, not to answer the request or add safety qualifications. Headings and lists are optional in L; it denotes an intended task-framed style, not a fixed layout. H2 controls for undergoing paraphrasing; F tests whether effects also appear with polished prose without headings or lists. The original requests were authored by this autonomous research agent. Thus even H1 and H2 are machine-generated. Their names indicate intended style only.
+
+An independent Gemini-2.5-Flash audit checks semantic equivalence to the original and rates clarity, politeness, formality, and AI-likeness on a five-point scale. The audit receives variant keys but not target-model outputs; it is not a human validation. We retain all variants in the primary comparison and report equivalence-filtered and token-length-matched sensitivity analyses.
+
+\subsection{Calibration and interventions}
+Eighty benign calibration requests cover 20 topics under four request forms. Fifteen topics (60 requests) train directions; five held-out topics (20 requests) assess transfer. These topics are separate from behavioral tasks. We use \model\ \citep{arxiv241215115} in bfloat16, without weight quantization, on one RTX A6000. The model revision and dependency versions are recorded. All activation directions use the output of decoder block 14 of 28 at the last token of the chat-formatted prompt, including its assistant-generation prefix. Layer choice is fixed before outcomes; no layer search is performed.
+
+For calibration request $i$, denote the activation under variant $v$ by $h_i^v$. The raw style difference is
+\begin{equation}
+ d_s=\frac{1}{60}\sum_i(h_i^L-h_i^{H1}).
+\end{equation}
+We similarly construct a formal-prose difference $d_f$, and a redundant-length difference $d_\ell$ by appending three repetitions of ``Please respond to the request above.'' to H1. This is a concrete redundant-instruction control, not a pure length variable. If $Q$ is an orthonormal basis for the span of $d_f,d_\ell$, the nuisance-projected difference is
+\begin{equation}
+ d_c=(I-QQ^\top)d_s.
+\end{equation}
+This projection removes two learned linear directions; it does not remove every possible surface confound.
+
+An independent attribution contrast prepends either ``The following request was written by an AI language model.'' or ``The following request was written by a human user.'' to H1. An evaluation contrast prepends explicit artificial-evaluation versus real-interaction context. Mean differences define $d_a$ and $d_e$. These vectors operationalize responses to source/context assertions, not validated latent mental states. Three seeded isotropic Gaussian vectors supply random controls.
+
+All directions are normalized to the norm of $d_s$, including the nuisance-projected direction, and tested at $\alpha=-1,+1$. We additionally test $\alpha=-2,+2$ for style and nuisance-projected directions as dose sensitivity. During generation, we add the vector to the final prompt position on prefill and the current token on each cached decoding step; earlier prompt positions are unchanged. This recurrent intervention is more extensive than changing one initial state. All steering comparisons use H1 text, with no added attribution claims in the behavioral prompt.
+
+\subsection{Manipulation checks and outcomes}
+For a separate authorship readout, the target model receives a classification system instruction and the same user text. We compute the next-token probability of the AI label conditional on the two allowed labels, A and B, and average across reversed label mappings. We retain the total probability mass assigned to A/B. This is prompted authorship self-report in a different system context; it is neither calibrated truth nor proof of spontaneous attribution during assistance. We measure both wording and activation effects on it.
+
+Behavioral outputs use the system message ``You are a helpful assistant.'' and greedy decoding. Accuracy is endorsement of the computed correct integer as the final answer; false agreement is endorsement of the asserted incorrect integer. Merely quoting a false number is not agreement. Refusal is an explicit decline to perform the requested task; a warning alone is insufficient. We also score fulfillment, incoherence, and truncation, because refusal can coexist with partial assistance and reduced refusal is not necessarily harmful compliance.
+
+Gemini-2.5-Flash judges canonical requests and responses without seeing wording-condition or steering labels. The canonical request is used to prevent the judge from changing its standard with surface style. For single-integer mathematical responses, deterministic comparison to the computed answer overrides any conflicting judge label; raw judgments and disagreements are retained. Other response formats use the judge. A second judge, GPT-4.1-mini, scores unsteered safety responses for an agreement check. API requests, returned model identifiers, and judgments are archived; provider inference itself is not exactly reproducible.
+
+\subsection{Analysis and protocol changes}
+We report paired percentage-point differences with 10,000-resample percentile bootstrap intervals. For pooled authorship readouts, each risky/benign safety pair is resampled as a cluster. Each safety subgroup has one item per pair. Exact two-sided paired binary tests compare L with H1 for accuracy, false agreement, risky refusal, and benign refusal, with Holm adjustment across these four comparisons. Other contrasts and steering analyses are exploratory and intervals are not multiplicity-adjusted. A zero-width bootstrap interval for an all-zero contrast does not establish population equivalence.
+
+The prospective protocol is preserved in \texttt{results/protocol.md}, together with amendments. An initial dependency failure occurred before target outputs. A short-cap generation pilot then exposed substantial right censoring from verbose arithmetic explanations. We retained that pilot separately and reran all main outputs with a uniform 512-token cap, rather than selectively retaining successful answers. This data-dependent change and the convenience sample make the study exploratory, not preregistered confirmation.
+
+\paragraph{Exploratory exact-core control.}
+Inspection of individual rewrites identified stance weakening and added emphasis missed by the automated audit. We therefore add a separate experiment on the accuracy and safety items, excluding the floor-limited false-belief group. The original task is retained byte-for-byte, preceded by a conversational, task-framed, or formal wrapper. Each wrapper is exactly ten Qwen tokens, and full prompt lengths are checked equal within item. We generate responses and repeat the counterbalanced authorship readout. This controls the task core and token length exactly, while changing a narrower aspect of presentation than full rewriting; it does not equate politeness or establish actual authorship. All these comparisons are post hoc.
+
+\section{Results}
+\input{results_text.tex}
+
+\section{Limitations}
+This study manipulates intended style, not actual human versus machine provenance. No natural human prompt corpus or human style validation is used. The entire set is English and synthetic, and all rewrites come from one generator. The findings therefore cannot establish effects in WildChat, deployed multi-agent systems, other model families, or larger models.
+
+Content matching is imperfect. Automated semantic judgments may miss changes in emphasis, and a formal-prose control is not a factorial manipulation of politeness, clarity, structure, and length. The redundant-length direction contains repetition and extra instructions. Removing its span with formality does not produce an unconfounded ``authorship-only'' direction. Calibration has few independent topics, probes use a single prespecified layer, and explicit source claims may activate lexical or instruction-following features. A small cosine does not establish representational independence throughout the network.
+
+The authorship readout changes the system task from assistance to classification. It can respond to answer-label biases or direct steering effects on logits despite counterbalancing. Even agreement between a classifier and a probe would not suffice to identify a mediator. Random controls establish only a limited reference distribution with three directions, and repeated steering may alter computations beyond authorship. Dose sensitivity must therefore be considered alongside accuracy and output quality.
+
+Our arithmetic false-belief test covers a narrow form of sycophancy; incorrect agreement can reflect computation errors as well as social deference. We do not compare each false-belief request with its own belief-free twin, so these measurements cannot fully separate those mechanisms. Refusal is not synonymous with safety, particularly for ambiguous rule-evasion examples. Automated judges may share systematic preferences with the rewrite model, and agreement between two judges is not ground truth. Generation caps, remaining incomplete answers, ceilings, and small subgroup sizes further limit inference. Nonsignificant comparisons are not evidence of equivalence.
+
+\section{Conclusion}
+\input{conclusion_text.tex}
+
+\paragraph{Reproducibility and disclosure.}
+The workspace provides scripts under \texttt{src/}, raw and processed outputs under \texttt{results/}, and all paper tables and figures generated by analysis code. Model weights and caches are excluded from version control. This report, its implementation, and its researcher-designed items were produced by an autonomous AI agent; no human participants or human annotators were recruited. Risky examples are limited to nonviolent safety-evaluation scenarios. The main paper reports aggregate behavior rather than detailed harmful responses.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\appendix
+\section{Additional measurements and examples}
+\input{appendix_text.tex}
+\end{document}

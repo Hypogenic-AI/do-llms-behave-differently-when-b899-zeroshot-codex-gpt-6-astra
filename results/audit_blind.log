@@ -1,0 +1,24 @@
+audits 0
+audits 20
+Traceback (most recent call last):
+  File "/workspaces/do-llms-behave-differently-when-b899-zeroshot-codex-gpt-6-astra/src/audit.py", line 17, in <module>
+    for n,_ in enumerate(ex.map(work,rows)):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/do-llms-behave-differently-when-b899-zeroshot-codex-gpt-6-astra/src/audit.py", line 13, in work
+    a['ratings']={mapping[k]:v for k,v in a['ratings'].items()}
+                  ~~~~~~~^^^
+KeyError: 'reference'

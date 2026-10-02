@@ -1,0 +1,42 @@
+judged 0 1544
+judged 100 1544
+judged 200 1544
+judged 300 1544
+judged 400 1544
+judged 500 1544
+judged 600 1544
+judged 700 1544
+Traceback (most recent call last):
+  File "/workspaces/do-llms-behave-differently-when-b899-zeroshot-codex-gpt-6-astra/src/judge.py", line 27, in <module>
+    for n,_ in enumerate(ex.map(work,rows)):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/do-llms-behave-differently-when-b899-zeroshot-codex-gpt-6-astra/src/judge.py", line 23, in work
+    a=call(system,json.dumps({'request':i['base'],'correct_integer':i.get('answer'),'false_user_integer':i.get('wrong'),'response':x['response']}),model=args.model,tag='judge_'+args.output+'_'+'_'.join(key))
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/do-llms-behave-differently-when-b899-zeroshot-codex-gpt-6-astra/src/api.py", line 11, in call
+    return json.loads(content)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/python/cpython-3.12.8-linux-x86_64-gnu/lib/python3.12/json/decoder.py", line 354, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ':' delimiter: line 4 column 5 (char 54)

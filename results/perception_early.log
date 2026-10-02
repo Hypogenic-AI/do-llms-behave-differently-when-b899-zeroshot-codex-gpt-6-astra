@@ -1,0 +1,59 @@
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.33s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.05s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:00,  1.04it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.14it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.05it/s]
+perception none 0 0 1000
+perception none 0 120 1000
+perception none 0 240 1000
+perception none 0 360 1000
+perception none 0 480 1000
+perception none 0 600 1000
+perception none 0 720 1000
+perception none 0 840 1000
+perception none 0 960 1000
+perception none 1 0 1000
+perception none 1 120 1000
+perception none 1 240 1000
+perception none 1 360 1000
+perception none 1 480 1000
+perception none 1 600 1000
+perception none 1 720 1000
+perception none 1 840 1000
+perception none 1 960 1000
+perception sham 0 0 120
+perception sham 1 0 120
+perception style_-1 0 0 120
+perception style_-1 1 0 120
+perception style_+1 0 0 120
+perception style_+1 1 0 120
+perception clean_-1 0 0 120
+perception clean_-1 1 0 120
+perception clean_+1 0 0 120
+perception clean_+1 1 0 120
+perception author_-1 0 0 120
+perception author_-1 1 0 120
+perception author_+1 0 0 120
+perception author_+1 1 0 120
+perception eval_-1 0 0 120
+perception eval_-1 1 0 120
+perception eval_+1 0 0 120
+perception eval_+1 1 0 120
+perception random0_-1 0 0 120
+perception random0_-1 1 0 120
+perception random0_+1 0 0 120
+perception random0_+1 1 0 120
+perception random1_-1 0 0 120
+perception random1_-1 1 0 120
+perception random1_+1 0 0 120
+perception random1_+1 1 0 120
+perception random2_-1 0 0 120
+perception random2_-1 1 0 120
+perception random2_+1 0 0 120
+perception random2_+1 1 0 120
+perception style_-2 0 0 120
+perception style_-2 1 0 120
+perception style_+2 0 0 120
+perception style_+2 1 0 120
+perception clean_-2 0 0 120
+perception clean_-2 1 0 120
+perception clean_+2 0 0 120
+perception clean_+2 1 0 120
+DONE perception

@@ -1,0 +1,25 @@
+{
+  "captured_utc": "2026-10-02T12:16:04.002956+00:00",
+  "python": "3.12.8",
+  "platform": "Linux-5.15.0-187-generic-x86_64-with-glibc2.35",
+  "cpu_count": 32,
+  "packages": {
+    "torch": "2.5.1",
+    "transformers": "4.51.3",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "openai": "3.23.0",
+    "matplotlib": "3.11.2"
+  },
+  "initial_hardware_observation": {
+    "gpu": "NVIDIA RTX A6000",
+    "gpu_total_MiB": 49140,
+    "gpu_used_MiB": 1,
+    "gpu_utilization_percent": 0,
+    "cpus_nproc": 32,
+    "ram_total_GiB_free_g": 503,
+    "ram_available_GiB_free_g": 189
+  }
+}

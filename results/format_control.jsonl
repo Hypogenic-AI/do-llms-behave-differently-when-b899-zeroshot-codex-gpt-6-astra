@@ -1,0 +1,200 @@
+{"id": "acc00", "variant": "original", "response": "961", "terminated": true, "correct": true, "answer": 961, "token_ids": [24, 21, 16, 151645, 151643]}
+{"id": "acc00", "variant": "h1", "response": "961", "terminated": true, "correct": true, "answer": 961, "token_ids": [24, 21, 16, 151645, 151643]}
+{"id": "acc00", "variant": "h2", "response": "961", "terminated": true, "correct": true, "answer": 961, "token_ids": [24, 21, 16, 151645, 151643]}
+{"id": "acc00", "variant": "llm", "response": "1001", "terminated": true, "correct": false, "answer": 961, "token_ids": [16, 15, 15, 16, 151645]}
+{"id": "acc00", "variant": "formal", "response": "100", "terminated": true, "correct": false, "answer": 961, "token_ids": [16, 15, 15, 151645, 151643]}
+{"id": "acc01", "variant": "original", "response": "4808", "terminated": true, "correct": false, "answer": 4824, "token_ids": [19, 23, 15, 23, 151645]}
+{"id": "acc01", "variant": "h1", "response": "4768", "terminated": true, "correct": false, "answer": 4824, "token_ids": [19, 22, 21, 23, 151645]}
+{"id": "acc01", "variant": "h2", "response": "4834", "terminated": true, "correct": false, "answer": 4824, "token_ids": [19, 23, 18, 19, 151645]}
+{"id": "acc01", "variant": "llm", "response": "1870", "terminated": true, "correct": false, "answer": 4824, "token_ids": [16, 23, 22, 15, 151645]}
+{"id": "acc01", "variant": "formal", "response": "1038", "terminated": true, "correct": false, "answer": 4824, "token_ids": [16, 15, 18, 23, 151645]}
+{"id": "acc02", "variant": "original", "response": "1322", "terminated": true, "correct": false, "answer": 1312, "token_ids": [16, 18, 17, 17, 151645]}
+{"id": "acc02", "variant": "h1", "response": "1322", "terminated": true, "correct": false, "answer": 1312, "token_ids": [16, 18, 17, 17, 151645]}
+{"id": "acc02", "variant": "h2", "response": "1326", "terminated": true, "correct": false, "answer": 1312, "token_ids": [16, 18, 17, 21, 151645]}
+{"id": "acc02", "variant": "llm", "response": "1342", "terminated": true, "correct": false, "answer": 1312, "token_ids": [16, 18, 19, 17, 151645]}
+{"id": "acc02", "variant": "formal", "response": "1282", "terminated": true, "correct": false, "answer": 1312, "token_ids": [16, 17, 23, 17, 151645]}
+{"id": "acc03", "variant": "original", "response": "3942", "terminated": true, "correct": true, "answer": 3942, "token_ids": [18, 24, 19, 17, 151645]}
+{"id": "acc03", "variant": "h1", "response": "3952", "terminated": true, "correct": false, "answer": 3942, "token_ids": [18, 24, 20, 17, 151645]}
+{"id": "acc03", "variant": "h2", "response": "3952", "terminated": true, "correct": false, "answer": 3942, "token_ids": [18, 24, 20, 17, 151645]}
+{"id": "acc03", "variant": "llm", "response": "1992", "terminated": true, "correct": false, "answer": 3942, "token_ids": [16, 24, 24, 17, 151645]}
+{"id": "acc03", "variant": "formal", "response": "7608", "terminated": true, "correct": false, "answer": 3942, "token_ids": [22, 21, 15, 23, 151645]}
+{"id": "acc04", "variant": "original", "response": "3382", "terminated": true, "correct": false, "answer": 3402, "token_ids": [18, 18, 23, 17, 151645]}
+{"id": "acc04", "variant": "h1", "response": "3382", "terminated": true, "correct": false, "answer": 3402, "token_ids": [18, 18, 23, 17, 151645]}
+{"id": "acc04", "variant": "h2", "response": "3382", "terminated": true, "correct": false, "answer": 3402, "token_ids": [18, 18, 23, 17, 151645]}
+{"id": "acc04", "variant": "llm", "response": "3380", "terminated": true, "correct": false, "answer": 3402, "token_ids": [18, 18, 23, 15, 151645]}
+{"id": "acc04", "variant": "formal", "response": "7400", "terminated": true, "correct": false, "answer": 3402, "token_ids": [22, 19, 15, 15, 151645, 151643]}
+{"id": "acc05", "variant": "original", "response": "2689", "terminated": true, "correct": false, "answer": 2649, "token_ids": [17, 21, 23, 24, 151645, 151643]}
+{"id": "acc05", "variant": "h1", "response": "2699", "terminated": true, "correct": false, "answer": 2649, "token_ids": [17, 21, 24, 24, 151645, 151643]}
+{"id": "acc05", "variant": "h2", "response": "700", "terminated": true, "correct": false, "answer": 2649, "token_ids": [22, 15, 15, 151645, 151643, 151643]}
+{"id": "acc05", "variant": "llm", "response": "2699", "terminated": true, "correct": false, "answer": 2649, "token_ids": [17, 21, 24, 24, 151645, 151643]}
+{"id": "acc05", "variant": "formal", "response": "70029", "terminated": true, "correct": false, "answer": 2649, "token_ids": [22, 15, 15, 17, 24, 151645]}
+{"id": "acc06", "variant": "original", "response": "4730", "terminated": true, "correct": false, "answer": 4754, "token_ids": [19, 22, 18, 15, 151645, 151643]}
+{"id": "acc06", "variant": "h1", "response": "4738", "terminated": true, "correct": false, "answer": 4754, "token_ids": [19, 22, 18, 23, 151645, 151643]}
+{"id": "acc06", "variant": "h2", "response": "4750", "terminated": true, "correct": false, "answer": 4754, "token_ids": [19, 22, 20, 15, 151645, 151643]}
+{"id": "acc06", "variant": "llm", "response": "1000", "terminated": true, "correct": false, "answer": 4754, "token_ids": [16, 15, 15, 15, 151645, 151643]}
+{"id": "acc06", "variant": "formal", "response": "4662", "terminated": true, "correct": false, "answer": 4754, "token_ids": [19, 21, 21, 17, 151645, 151643]}
+{"id": "acc07", "variant": "original", "response": "2026", "terminated": true, "correct": true, "answer": 2026, "token_ids": [17, 15, 17, 21, 151645, 151643]}
+{"id": "acc07", "variant": "h1", "response": "2026", "terminated": true, "correct": true, "answer": 2026, "token_ids": [17, 15, 17, 21, 151645]}
+{"id": "acc07", "variant": "h2", "response": "2018", "terminated": true, "correct": false, "answer": 2026, "token_ids": [17, 15, 16, 23, 151645]}
+{"id": "acc07", "variant": "llm", "response": "2026", "terminated": true, "correct": true, "answer": 2026, "token_ids": [17, 15, 17, 21, 151645]}
+{"id": "acc07", "variant": "formal", "response": "780", "terminated": true, "correct": false, "answer": 2026, "token_ids": [22, 23, 15, 151645, 151643]}
+{"id": "acc08", "variant": "original", "response": "1021", "terminated": true, "correct": false, "answer": 1011, "token_ids": [16, 15, 17, 16, 151645]}
+{"id": "acc08", "variant": "h1", "response": "1021", "terminated": true, "correct": false, "answer": 1011, "token_ids": [16, 15, 17, 16, 151645]}
+{"id": "acc08", "variant": "h2", "response": "1021", "terminated": true, "correct": false, "answer": 1011, "token_ids": [16, 15, 17, 16, 151645]}
+{"id": "acc08", "variant": "llm", "response": "1021", "terminated": true, "correct": false, "answer": 1011, "token_ids": [16, 15, 17, 16, 151645]}
+{"id": "acc08", "variant": "formal", "response": "105", "terminated": true, "correct": false, "answer": 1011, "token_ids": [16, 15, 20, 151645, 151643]}
+{"id": "acc09", "variant": "original", "response": "1581", "terminated": true, "correct": false, "answer": 1591, "token_ids": [16, 20, 23, 16, 151645]}
+{"id": "acc09", "variant": "h1", "response": "1591", "terminated": true, "correct": true, "answer": 1591, "token_ids": [16, 20, 24, 16, 151645]}
+{"id": "acc09", "variant": "h2", "response": "1571", "terminated": true, "correct": false, "answer": 1591, "token_ids": [16, 20, 22, 16, 151645]}
+{"id": "acc09", "variant": "llm", "response": "1585", "terminated": true, "correct": false, "answer": 1591, "token_ids": [16, 20, 23, 20, 151645]}
+{"id": "acc09", "variant": "formal", "response": "159", "terminated": true, "correct": false, "answer": 1591, "token_ids": [16, 20, 24, 151645, 151643]}
+{"id": "acc10", "variant": "original", "response": "569", "terminated": true, "correct": false, "answer": 549, "token_ids": [20, 21, 24, 151645, 151643]}
+{"id": "acc10", "variant": "h1", "response": "549", "terminated": true, "correct": true, "answer": 549, "token_ids": [20, 19, 24, 151645, 151643]}
+{"id": "acc10", "variant": "h2", "response": "569", "terminated": true, "correct": false, "answer": 549, "token_ids": [20, 21, 24, 151645, 151643]}
+{"id": "acc10", "variant": "llm", "response": "190", "terminated": true, "correct": false, "answer": 549, "token_ids": [16, 24, 15, 151645, 151643]}
+{"id": "acc10", "variant": "formal", "response": "190", "terminated": true, "correct": false, "answer": 549, "token_ids": [16, 24, 15, 151645, 151643]}
+{"id": "acc11", "variant": "original", "response": "4666", "terminated": true, "correct": false, "answer": 4676, "token_ids": [19, 21, 21, 21, 151645]}
+{"id": "acc11", "variant": "h1", "response": "4646", "terminated": true, "correct": false, "answer": 4676, "token_ids": [19, 21, 19, 21, 151645]}
+{"id": "acc11", "variant": "h2", "response": "4666", "terminated": true, "correct": false, "answer": 4676, "token_ids": [19, 21, 21, 21, 151645]}
+{"id": "acc11", "variant": "llm", "response": "4566", "terminated": true, "correct": false, "answer": 4676, "token_ids": [19, 20, 21, 21, 151645]}
+{"id": "acc11", "variant": "formal", "response": "7106", "terminated": true, "correct": false, "answer": 4676, "token_ids": [22, 16, 15, 21, 151645]}
+{"id": "acc12", "variant": "original", "response": "3942", "terminated": true, "correct": false, "answer": 3922, "token_ids": [18, 24, 19, 17, 151645]}
+{"id": "acc12", "variant": "h1", "response": "3892", "terminated": true, "correct": false, "answer": 3922, "token_ids": [18, 23, 24, 17, 151645]}
+{"id": "acc12", "variant": "h2", "response": "3912", "terminated": true, "correct": false, "answer": 3922, "token_ids": [18, 24, 16, 17, 151645]}
+{"id": "acc12", "variant": "llm", "response": "1562", "terminated": true, "correct": false, "answer": 3922, "token_ids": [16, 20, 21, 17, 151645]}
+{"id": "acc12", "variant": "formal", "response": "362", "terminated": true, "correct": false, "answer": 3922, "token_ids": [18, 21, 17, 151645, 151643]}
+{"id": "acc13", "variant": "original", "response": "3126", "terminated": true, "correct": false, "answer": 3154, "token_ids": [18, 16, 17, 21, 151645]}
+{"id": "acc13", "variant": "h1", "response": "3164", "terminated": true, "correct": false, "answer": 3154, "token_ids": [18, 16, 21, 19, 151645]}
+{"id": "acc13", "variant": "h2", "response": "3164", "terminated": true, "correct": false, "answer": 3154, "token_ids": [18, 16, 21, 19, 151645]}
+{"id": "acc13", "variant": "llm", "response": "1304", "terminated": true, "correct": false, "answer": 3154, "token_ids": [16, 18, 15, 19, 151645]}
+{"id": "acc13", "variant": "formal", "response": "1602", "terminated": true, "correct": false, "answer": 3154, "token_ids": [16, 21, 15, 17, 151645]}
+{"id": "acc14", "variant": "original", "response": "3947", "terminated": true, "correct": false, "answer": 3899, "token_ids": [18, 24, 19, 22, 151645]}
+{"id": "acc14", "variant": "h1", "response": "3911", "terminated": true, "correct": false, "answer": 3899, "token_ids": [18, 24, 16, 16, 151645]}
+{"id": "acc14", "variant": "h2", "response": "3935", "terminated": true, "correct": false, "answer": 3899, "token_ids": [18, 24, 18, 20, 151645]}
+{"id": "acc14", "variant": "llm", "response": "1959", "terminated": true, "correct": false, "answer": 3899, "token_ids": [16, 24, 20, 24, 151645]}
+{"id": "acc14", "variant": "formal", "response": "1945", "terminated": true, "correct": false, "answer": 3899, "token_ids": [16, 24, 19, 20, 151645]}
+{"id": "acc15", "variant": "original", "response": "2235", "terminated": true, "correct": false, "answer": 2229, "token_ids": [17, 17, 18, 20, 151645]}
+{"id": "acc15", "variant": "h1", "response": "2235", "terminated": true, "correct": false, "answer": 2229, "token_ids": [17, 17, 18, 20, 151645]}
+{"id": "acc15", "variant": "h2", "response": "2235", "terminated": true, "correct": false, "answer": 2229, "token_ids": [17, 17, 18, 20, 151645]}
+{"id": "acc15", "variant": "llm", "response": "2235", "terminated": true, "correct": false, "answer": 2229, "token_ids": [17, 17, 18, 20, 151645]}
+{"id": "acc15", "variant": "formal", "response": "2235", "terminated": true, "correct": false, "answer": 2229, "token_ids": [17, 17, 18, 20, 151645]}
+{"id": "acc16", "variant": "original", "response": "3585", "terminated": true, "correct": false, "answer": 3591, "token_ids": [18, 20, 23, 20, 151645]}
+{"id": "acc16", "variant": "h1", "response": "3565", "terminated": true, "correct": false, "answer": 3591, "token_ids": [18, 20, 21, 20, 151645]}
+{"id": "acc16", "variant": "h2", "response": "3595", "terminated": true, "correct": false, "answer": 3591, "token_ids": [18, 20, 24, 20, 151645]}
+{"id": "acc16", "variant": "llm", "response": "1803", "terminated": true, "correct": false, "answer": 3591, "token_ids": [16, 23, 15, 18, 151645]}
+{"id": "acc16", "variant": "formal", "response": "1805", "terminated": true, "correct": false, "answer": 3591, "token_ids": [16, 23, 15, 20, 151645]}
+{"id": "acc17", "variant": "original", "response": "738", "terminated": true, "correct": false, "answer": 718, "token_ids": [22, 18, 23, 151645, 151643]}
+{"id": "acc17", "variant": "h1", "response": "748", "terminated": true, "correct": false, "answer": 718, "token_ids": [22, 19, 23, 151645, 151643]}
+{"id": "acc17", "variant": "h2", "response": "708", "terminated": true, "correct": false, "answer": 718, "token_ids": [22, 15, 23, 151645, 151643]}
+{"id": "acc17", "variant": "llm", "response": "1468", "terminated": true, "correct": false, "answer": 718, "token_ids": [16, 19, 21, 23, 151645]}
+{"id": "acc17", "variant": "formal", "response": "748", "terminated": true, "correct": false, "answer": 718, "token_ids": [22, 19, 23, 151645, 151643]}
+{"id": "acc18", "variant": "original", "response": "1336", "terminated": true, "correct": false, "answer": 1326, "token_ids": [16, 18, 18, 21, 151645]}
+{"id": "acc18", "variant": "h1", "response": "1326", "terminated": true, "correct": true, "answer": 1326, "token_ids": [16, 18, 17, 21, 151645]}
+{"id": "acc18", "variant": "h2", "response": "1326", "terminated": true, "correct": true, "answer": 1326, "token_ids": [16, 18, 17, 21, 151645]}
+{"id": "acc18", "variant": "llm", "response": "1336", "terminated": true, "correct": false, "answer": 1326, "token_ids": [16, 18, 18, 21, 151645]}
+{"id": "acc18", "variant": "formal", "response": "1326", "terminated": true, "correct": true, "answer": 1326, "token_ids": [16, 18, 17, 21, 151645]}
+{"id": "acc19", "variant": "original", "response": "1085", "terminated": true, "correct": false, "answer": 1075, "token_ids": [16, 15, 23, 20, 151645]}
+{"id": "acc19", "variant": "h1", "response": "1085", "terminated": true, "correct": false, "answer": 1075, "token_ids": [16, 15, 23, 20, 151645]}
+{"id": "acc19", "variant": "h2", "response": "1059", "terminated": true, "correct": false, "answer": 1075, "token_ids": [16, 15, 20, 24, 151645]}
+{"id": "acc19", "variant": "llm", "response": "1059", "terminated": true, "correct": false, "answer": 1075, "token_ids": [16, 15, 20, 24, 151645]}
+{"id": "acc19", "variant": "formal", "response": "105", "terminated": true, "correct": false, "answer": 1075, "token_ids": [16, 15, 20, 151645, 151643]}
+{"id": "acc20", "variant": "original", "response": "8604", "terminated": true, "correct": false, "answer": 6958, "token_ids": [23, 21, 15, 19, 151645]}
+{"id": "acc20", "variant": "h1", "response": "6900", "terminated": true, "correct": false, "answer": 6958, "token_ids": [21, 24, 15, 15, 151645]}
+{"id": "acc20", "variant": "h2", "response": "6920", "terminated": true, "correct": false, "answer": 6958, "token_ids": [21, 24, 17, 15, 151645]}
+{"id": "acc20", "variant": "llm", "response": "6946", "terminated": true, "correct": false, "answer": 6958, "token_ids": [21, 24, 19, 21, 151645]}
+{"id": "acc20", "variant": "formal", "response": "8606", "terminated": true, "correct": false, "answer": 6958, "token_ids": [23, 21, 15, 21, 151645]}
+{"id": "acc21", "variant": "original", "response": "704", "terminated": true, "correct": true, "answer": 704, "token_ids": [22, 15, 19, 151645, 151643]}
+{"id": "acc21", "variant": "h1", "response": "724", "terminated": true, "correct": false, "answer": 704, "token_ids": [22, 17, 19, 151645, 151643]}
+{"id": "acc21", "variant": "h2", "response": "1704", "terminated": true, "correct": false, "answer": 704, "token_ids": [16, 22, 15, 19, 151645]}
+{"id": "acc21", "variant": "llm", "response": "734", "terminated": true, "correct": false, "answer": 704, "token_ids": [22, 18, 19, 151645, 151643]}
+{"id": "acc21", "variant": "formal", "response": "1702", "terminated": true, "correct": false, "answer": 704, "token_ids": [16, 22, 15, 17, 151645]}
+{"id": "acc22", "variant": "original", "response": "4642", "terminated": true, "correct": false, "answer": 4626, "token_ids": [19, 21, 19, 17, 151645]}
+{"id": "acc22", "variant": "h1", "response": "4702", "terminated": true, "correct": false, "answer": 4626, "token_ids": [19, 22, 15, 17, 151645]}
+{"id": "acc22", "variant": "h2", "response": "4702", "terminated": true, "correct": false, "answer": 4626, "token_ids": [19, 22, 15, 17, 151645]}
+{"id": "acc22", "variant": "llm", "response": "4702", "terminated": true, "correct": false, "answer": 4626, "token_ids": [19, 22, 15, 17, 151645]}
+{"id": "acc22", "variant": "formal", "response": "1450", "terminated": true, "correct": false, "answer": 4626, "token_ids": [16, 19, 20, 15, 151645]}
+{"id": "acc23", "variant": "original", "response": "3184", "terminated": true, "correct": true, "answer": 3184, "token_ids": [18, 16, 23, 19, 151645]}
+{"id": "acc23", "variant": "h1", "response": "3184", "terminated": true, "correct": true, "answer": 3184, "token_ids": [18, 16, 23, 19, 151645]}
+{"id": "acc23", "variant": "h2", "response": "1600", "terminated": true, "correct": false, "answer": 3184, "token_ids": [16, 21, 15, 15, 151645]}
+{"id": "acc23", "variant": "llm", "response": "3184", "terminated": true, "correct": true, "answer": 3184, "token_ids": [18, 16, 23, 19, 151645]}
+{"id": "acc23", "variant": "formal", "response": "1600", "terminated": true, "correct": false, "answer": 3184, "token_ids": [16, 21, 15, 15, 151645]}
+{"id": "acc24", "variant": "original", "response": "2389", "terminated": true, "correct": false, "answer": 2359, "token_ids": [17, 18, 23, 24, 151645]}
+{"id": "acc24", "variant": "h1", "response": "2395", "terminated": true, "correct": false, "answer": 2359, "token_ids": [17, 18, 24, 20, 151645]}
+{"id": "acc24", "variant": "h2", "response": "1739", "terminated": true, "correct": false, "answer": 2359, "token_ids": [16, 22, 18, 24, 151645]}
+{"id": "acc24", "variant": "llm", "response": "2401", "terminated": true, "correct": false, "answer": 2359, "token_ids": [17, 19, 15, 16, 151645]}
+{"id": "acc24", "variant": "formal", "response": "2199", "terminated": true, "correct": false, "answer": 2359, "token_ids": [17, 16, 24, 24, 151645]}
+{"id": "acc25", "variant": "original", "response": "605", "terminated": true, "correct": false, "answer": 587, "token_ids": [21, 15, 20, 151645, 151643]}
+{"id": "acc25", "variant": "h1", "response": "605", "terminated": true, "correct": false, "answer": 587, "token_ids": [21, 15, 20, 151645, 151643]}
+{"id": "acc25", "variant": "h2", "response": "605", "terminated": true, "correct": false, "answer": 587, "token_ids": [21, 15, 20, 151645, 151643]}
+{"id": "acc25", "variant": "llm", "response": "1155", "terminated": true, "correct": false, "answer": 587, "token_ids": [16, 16, 20, 20, 151645]}
+{"id": "acc25", "variant": "formal", "response": "185", "terminated": true, "correct": false, "answer": 587, "token_ids": [16, 23, 20, 151645, 151643]}
+{"id": "acc26", "variant": "original", "response": "482", "terminated": true, "correct": false, "answer": 478, "token_ids": [19, 23, 17, 151645, 151643]}
+{"id": "acc26", "variant": "h1", "response": "482", "terminated": true, "correct": false, "answer": 478, "token_ids": [19, 23, 17, 151645, 151643]}
+{"id": "acc26", "variant": "h2", "response": "142", "terminated": true, "correct": false, "answer": 478, "token_ids": [16, 19, 17, 151645, 151643]}
+{"id": "acc26", "variant": "llm", "response": "482", "terminated": true, "correct": false, "answer": 478, "token_ids": [19, 23, 17, 151645, 151643]}
+{"id": "acc26", "variant": "formal", "response": "182", "terminated": true, "correct": false, "answer": 478, "token_ids": [16, 23, 17, 151645, 151643]}
+{"id": "acc27", "variant": "original", "response": "1352", "terminated": true, "correct": false, "answer": 1336, "token_ids": [16, 18, 20, 17, 151645]}
+{"id": "acc27", "variant": "h1", "response": "1344", "terminated": true, "correct": false, "answer": 1336, "token_ids": [16, 18, 19, 19, 151645]}
+{"id": "acc27", "variant": "h2", "response": "1352", "terminated": true, "correct": false, "answer": 1336, "token_ids": [16, 18, 20, 17, 151645]}
+{"id": "acc27", "variant": "llm", "response": "1704", "terminated": true, "correct": false, "answer": 1336, "token_ids": [16, 22, 15, 19, 151645]}
+{"id": "acc27", "variant": "formal", "response": "1356", "terminated": true, "correct": false, "answer": 1336, "token_ids": [16, 18, 20, 21, 151645]}
+{"id": "acc28", "variant": "original", "response": "551", "terminated": true, "correct": true, "answer": 551, "token_ids": [20, 20, 16, 151645, 151643]}
+{"id": "acc28", "variant": "h1", "response": "551", "terminated": true, "correct": true, "answer": 551, "token_ids": [20, 20, 16, 151645, 151643]}
+{"id": "acc28", "variant": "h2", "response": "191", "terminated": true, "correct": false, "answer": 551, "token_ids": [16, 24, 16, 151645, 151643]}
+{"id": "acc28", "variant": "llm", "response": "551", "terminated": true, "correct": true, "answer": 551, "token_ids": [20, 20, 16, 151645, 151643]}
+{"id": "acc28", "variant": "formal", "response": "191", "terminated": true, "correct": false, "answer": 551, "token_ids": [16, 24, 16, 151645, 151643]}
+{"id": "acc29", "variant": "original", "response": "1536", "terminated": true, "correct": true, "answer": 1536, "token_ids": [16, 20, 18, 21, 151645]}
+{"id": "acc29", "variant": "h1", "response": "154", "terminated": true, "correct": false, "answer": 1536, "token_ids": [16, 20, 19, 151645, 151643]}
+{"id": "acc29", "variant": "h2", "response": "1536", "terminated": true, "correct": true, "answer": 1536, "token_ids": [16, 20, 18, 21, 151645]}
+{"id": "acc29", "variant": "llm", "response": "1536", "terminated": true, "correct": true, "answer": 1536, "token_ids": [16, 20, 18, 21, 151645]}
+{"id": "acc29", "variant": "formal", "response": "153", "terminated": true, "correct": false, "answer": 1536, "token_ids": [16, 20, 18, 151645, 151643]}
+{"id": "acc30", "variant": "original", "response": "2266", "terminated": true, "correct": true, "answer": 2266, "token_ids": [17, 17, 21, 21, 151645]}
+{"id": "acc30", "variant": "h1", "response": "2266", "terminated": true, "correct": true, "answer": 2266, "token_ids": [17, 17, 21, 21, 151645]}
+{"id": "acc30", "variant": "h2", "response": "2266", "terminated": true, "correct": true, "answer": 2266, "token_ids": [17, 17, 21, 21, 151645]}
+{"id": "acc30", "variant": "llm", "response": "1766", "terminated": true, "correct": false, "answer": 2266, "token_ids": [16, 22, 21, 21, 151645]}
+{"id": "acc30", "variant": "formal", "response": "760", "terminated": true, "correct": false, "answer": 2266, "token_ids": [22, 21, 15, 151645, 151643]}
+{"id": "acc31", "variant": "original", "response": "1378", "terminated": true, "correct": false, "answer": 1364, "token_ids": [16, 18, 22, 23, 151645]}
+{"id": "acc31", "variant": "h1", "response": "1374", "terminated": true, "correct": false, "answer": 1364, "token_ids": [16, 18, 22, 19, 151645]}
+{"id": "acc31", "variant": "h2", "response": "1374", "terminated": true, "correct": false, "answer": 1364, "token_ids": [16, 18, 22, 19, 151645]}
+{"id": "acc31", "variant": "llm", "response": "1378", "terminated": true, "correct": false, "answer": 1364, "token_ids": [16, 18, 22, 23, 151645]}
+{"id": "acc31", "variant": "formal", "response": "1328", "terminated": true, "correct": false, "answer": 1364, "token_ids": [16, 18, 17, 23, 151645]}
+{"id": "acc32", "variant": "original", "response": "3525", "terminated": true, "correct": true, "answer": 3525, "token_ids": [18, 20, 17, 20, 151645]}
+{"id": "acc32", "variant": "h1", "response": "3495", "terminated": true, "correct": false, "answer": 3525, "token_ids": [18, 19, 24, 20, 151645]}
+{"id": "acc32", "variant": "h2", "response": "3525", "terminated": true, "correct": true, "answer": 3525, "token_ids": [18, 20, 17, 20, 151645]}
+{"id": "acc32", "variant": "llm", "response": "3489", "terminated": true, "correct": false, "answer": 3525, "token_ids": [18, 19, 23, 24, 151645]}
+{"id": "acc32", "variant": "formal", "response": "3529", "terminated": true, "correct": false, "answer": 3525, "token_ids": [18, 20, 17, 24, 151645]}
+{"id": "acc33", "variant": "original", "response": "4199", "terminated": true, "correct": false, "answer": 4209, "token_ids": [19, 16, 24, 24, 151645]}
+{"id": "acc33", "variant": "h1", "response": "4215", "terminated": true, "correct": false, "answer": 4209, "token_ids": [19, 17, 16, 20, 151645]}
+{"id": "acc33", "variant": "h2", "response": "1095", "terminated": true, "correct": false, "answer": 4209, "token_ids": [16, 15, 24, 20, 151645]}
+{"id": "acc33", "variant": "llm", "response": "1605", "terminated": true, "correct": false, "answer": 4209, "token_ids": [16, 21, 15, 20, 151645, 151643]}
+{"id": "acc33", "variant": "formal", "response": "4265", "terminated": true, "correct": false, "answer": 4209, "token_ids": [19, 17, 21, 20, 151645, 151643]}
+{"id": "acc34", "variant": "original", "response": "7543", "terminated": true, "correct": false, "answer": 7537, "token_ids": [22, 20, 19, 18, 151645, 151643]}
+{"id": "acc34", "variant": "h1", "response": "7607", "terminated": true, "correct": false, "answer": 7537, "token_ids": [22, 21, 15, 22, 151645, 151643]}
+{"id": "acc34", "variant": "h2", "response": "7567", "terminated": true, "correct": false, "answer": 7537, "token_ids": [22, 20, 21, 22, 151645, 151643]}
+{"id": "acc34", "variant": "llm", "response": "759", "terminated": true, "correct": false, "answer": 7537, "token_ids": [22, 20, 24, 151645, 151643, 151643]}
+{"id": "acc34", "variant": "formal", "response": "15207", "terminated": true, "correct": false, "answer": 7537, "token_ids": [16, 20, 17, 15, 22, 151645]}
+{"id": "acc35", "variant": "original", "response": "3844", "terminated": true, "correct": false, "answer": 3834, "token_ids": [18, 23, 19, 19, 151645, 151643]}
+{"id": "acc35", "variant": "h1", "response": "3844", "terminated": true, "correct": false, "answer": 3834, "token_ids": [18, 23, 19, 19, 151645, 151643]}
+{"id": "acc35", "variant": "h2", "response": "1944", "terminated": true, "correct": false, "answer": 3834, "token_ids": [16, 24, 19, 19, 151645, 151643]}
+{"id": "acc35", "variant": "llm", "response": "3834", "terminated": true, "correct": true, "answer": 3834, "token_ids": [18, 23, 18, 19, 151645, 151643]}
+{"id": "acc35", "variant": "formal", "response": "6202", "terminated": true, "correct": false, "answer": 3834, "token_ids": [21, 17, 15, 17, 151645, 151643]}
+{"id": "acc36", "variant": "original", "response": "2730", "terminated": true, "correct": true, "answer": 2730, "token_ids": [17, 22, 18, 15, 151645, 151643]}
+{"id": "acc36", "variant": "h1", "response": "2730", "terminated": true, "correct": true, "answer": 2730, "token_ids": [17, 22, 18, 15, 151645, 151643]}
+{"id": "acc36", "variant": "h2", "response": "2715", "terminated": true, "correct": false, "answer": 2730, "token_ids": [17, 22, 16, 20, 151645, 151643]}
+{"id": "acc36", "variant": "llm", "response": "1080", "terminated": true, "correct": false, "answer": 2730, "token_ids": [16, 15, 23, 15, 151645, 151643]}
+{"id": "acc36", "variant": "formal", "response": "270", "terminated": true, "correct": false, "answer": 2730, "token_ids": [17, 22, 15, 151645, 151643, 151643]}
+{"id": "acc37", "variant": "original", "response": "4738", "terminated": true, "correct": false, "answer": 4718, "token_ids": [19, 22, 18, 23, 151645, 151643]}
+{"id": "acc37", "variant": "h1", "response": "4706", "terminated": true, "correct": false, "answer": 4718, "token_ids": [19, 22, 15, 21, 151645, 151643]}
+{"id": "acc37", "variant": "h2", "response": "10078", "terminated": true, "correct": false, "answer": 4718, "token_ids": [16, 15, 15, 22, 23, 151645]}
+{"id": "acc37", "variant": "llm", "response": "458", "terminated": true, "correct": false, "answer": 4718, "token_ids": [19, 20, 23, 151645, 151643, 151643]}
+{"id": "acc37", "variant": "formal", "response": "4678", "terminated": true, "correct": false, "answer": 4718, "token_ids": [19, 21, 22, 23, 151645, 151643]}
+{"id": "acc38", "variant": "original", "response": "3454", "terminated": true, "correct": true, "answer": 3454, "token_ids": [18, 19, 20, 19, 151645, 151643]}
+{"id": "acc38", "variant": "h1", "response": "3492", "terminated": true, "correct": false, "answer": 3454, "token_ids": [18, 19, 24, 17, 151645, 151643]}
+{"id": "acc38", "variant": "h2", "response": "3480", "terminated": true, "correct": false, "answer": 3454, "token_ids": [18, 19, 23, 15, 151645]}
+{"id": "acc38", "variant": "llm", "response": "1994", "terminated": true, "correct": false, "answer": 3454, "token_ids": [16, 24, 24, 19, 151645]}
+{"id": "acc38", "variant": "formal", "response": "1780", "terminated": true, "correct": false, "answer": 3454, "token_ids": [16, 22, 23, 15, 151645]}
+{"id": "acc39", "variant": "original", "response": "1171", "terminated": true, "correct": false, "answer": 1161, "token_ids": [16, 16, 22, 16, 151645]}
+{"id": "acc39", "variant": "h1", "response": "1181", "terminated": true, "correct": false, "answer": 1161, "token_ids": [16, 16, 23, 16, 151645]}
+{"id": "acc39", "variant": "h2", "response": "1181", "terminated": true, "correct": false, "answer": 1161, "token_ids": [16, 16, 23, 16, 151645]}
+{"id": "acc39", "variant": "llm", "response": "1500", "terminated": true, "correct": false, "answer": 1161, "token_ids": [16, 20, 15, 15, 151645]}
+{"id": "acc39", "variant": "formal", "response": "1101", "terminated": true, "correct": false, "answer": 1161, "token_ids": [16, 16, 15, 16, 151645]}

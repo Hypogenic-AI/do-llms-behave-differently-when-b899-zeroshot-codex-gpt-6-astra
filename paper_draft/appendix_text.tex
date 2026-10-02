@@ -1,0 +1,162 @@
+\begin{table*}[t]\centering
+\input{tables/steering.tex}
+\caption{All fixed-text intervention response rates (\%). ``Clean'' denotes the nuisance-projected style direction. Unit doses share the raw style mean-difference norm; doubled style doses are exploratory. All prompts use H1.}\label{tab:steering}
+\end{table*}
+
+\subsection{Filtered wording comparisons}\begin{center}\small\begin{tabular}{llrr}\toprule Outcome & Filter & $n$ & L$-$H1, pp [95\% CI]\\\midrule
+
+Accuracy & equivalent & 40 & +47.5 [+32.5, +62.5]\\
+
+Accuracy & length20 & 28 & +57.1 [+39.3, +75.0]\\
+
+Accuracy & complete-pair & 40 & +47.5 [+32.5, +62.5]\\
+
+False agreement & equivalent & 40 & +0.0 [+0.0, +0.0]\\
+
+False agreement & length20 & 40 & +0.0 [+0.0, +0.0]\\
+
+False agreement & complete-pair & 40 & +0.0 [+0.0, +0.0]\\
+
+Risky refusal & equivalent & 19 & -5.3 [-26.3, +15.8]\\
+
+Risky refusal & length20 & 8 & -12.5 [-37.5, +0.0]\\
+
+Risky refusal & complete-pair & 17 & -17.6 [-41.2, +5.9]\\
+
+Benign refusal & equivalent & 16 & +0.0 [+0.0, +0.0]\\
+
+Benign refusal & length20 & 5 & +0.0 [+0.0, +0.0]\\
+
+Benign refusal & complete-pair & 10 & +0.0 [+0.0, +0.0]\\
+
+\bottomrule\end{tabular}\end{center}
+
+Filters denote audit-equivalent pairs, token-length ratio within the prespecified tolerance, and pairs where neither response is truncated. Audit-equivalence is imperfect and completeness is outcome-dependent. These sensitivity analyses do not eliminate confounding.
+
+\subsection{Truncation and output quality}
+
+\begin{center}\small\begin{tabular}{lrr}\toprule Condition & Safety truncated (\%) & Incoherent (\%)\\\midrule
+
+none & 24.5 & 0.2\\
+
+sham & 17.5 & 0.0\\
+
+style\_-1 & 20.0 & 0.0\\
+
+style\_+1 & 17.5 & 0.0\\
+
+clean\_-1 & 10.0 & 0.0\\
+
+clean\_+1 & 22.5 & 0.0\\
+
+author\_-1 & 12.5 & 0.0\\
+
+author\_+1 & 20.0 & 0.0\\
+
+eval\_-1 & 17.5 & 0.0\\
+
+eval\_+1 & 12.5 & 0.0\\
+
+style\_-2 & 15.0 & 0.0\\
+
+style\_+2 & 12.5 & 0.0\\
+
+clean\_-2 & 10.0 & 0.0\\
+
+clean\_+2 & 15.0 & 0.0\\
+
+\bottomrule\end{tabular}\end{center}
+
+Incoherence aggregates all three behavioral groups. For the unsteered row, all five equally sized style groups are averaged. Truncation is not itself judged incoherence. Main judgments describe the displayed response prefix, not an unobserved completion.
+
+\subsection{Task-specific manipulation checks}
+
+\begin{center}\resizebox{\columnwidth}{!}{\begin{tabular}{llr}\toprule Task & Construction & L$-$H1 readout, pp [95\% CI]\\\midrule
+
+accuracy & Rewrite & +0.83 [+0.03, +1.73]\\
+
+accuracy & Exact core & +0.01 [-0.02, +0.05]\\
+
+sycophancy & Rewrite & +22.59 [+17.30, +27.79]\\
+
+safety & Rewrite & +27.12 [+22.30, +32.33]\\
+
+safety & Exact core & +16.14 [+12.26, +19.75]\\
+
+\bottomrule\end{tabular}}\end{center}
+
+Pooled authorship scores conceal substantial task heterogeneity. The arithmetic readout barely changes, especially for exact cores, even though accuracy and response format change strongly. The larger safety and false-belief readout changes must not be used as a manipulation check for arithmetic.
+
+\subsection{Authorship readout under interventions}\begin{center}\small\begin{tabular}{lrr}\toprule Condition & $P(\mathrm{AI})$ (\%) & Change from sham (pp)\\\midrule
+
+author\_+1 & 31.1 & -0.46\\
+
+author\_-1 & 31.2 & -0.36\\
+
+clean\_+1 & 30.2 & -1.39\\
+
+clean\_+2 & 28.4 & -3.17\\
+
+clean\_-1 & 33.0 & +1.43\\
+
+clean\_-2 & 37.4 & +5.80\\
+
+eval\_+1 & 31.5 & -0.06\\
+
+eval\_-1 & 31.2 & -0.37\\
+
+none & 31.2 & -0.37\\
+
+random0\_+1 & 31.6 & +0.04\\
+
+random0\_-1 & 30.9 & -0.68\\
+
+random1\_+1 & 31.9 & +0.40\\
+
+random1\_-1 & 30.1 & -1.47\\
+
+random2\_+1 & 28.3 & -3.25\\
+
+random2\_-1 & 31.9 & +0.32\\
+
+sham & 31.6 & +0.00\\
+
+style\_+1 & 30.3 & -1.27\\
+
+style\_+2 & 31.2 & -0.40\\
+
+style\_-1 & 30.8 & -0.71\\
+
+style\_-2 & 33.0 & +1.48\\
+
+\bottomrule\end{tabular}\end{center}
+
+Mean two-label probability mass is 0.9994 or greater across intervention conditions. Label normalization is therefore not hiding a large rejection of the classification format in these aggregates.
+
+\subsection{Prompt example and exact wrappers}
+
+\paragraph{original.} What is 82 times 59, minus 14? Give just the integer answer.
+
+\paragraph{h1.} Can you tell me what 82 times 59 minus 14 equals? Just give me the number.
+
+\paragraph{llm.} Calculate the value of 82 multiplied by 59, then subtract 14 from the product. Provide only the integer result.
+
+\paragraph{formal.} Please compute the product of 82 and 59, then subtract 14 from this value. Provide solely the integer result.
+
+The correct answer is 4824. None of these prompts requests a worked solution. The original remains verbatim after each wrapper in the exact-core experiment.
+
+\paragraph{h1 wrapper.} \texttt{hey, can you help me with this request?} followed by a blank line and the original task.
+
+\paragraph{llm wrapper.} \texttt{Task: Please respond to the following user request.} followed by a blank line and the original task.
+
+\paragraph{formal wrapper.} \texttt{Kindly provide a response to the following request.} followed by a blank line and the original task.
+
+\subsection{Implementation and audit trail}
+
+The target checkpoint revision is \texttt{a09a35458c702b33eeacc393d103063234e8bc28}. Inference uses PyTorch 2.5.1 and Transformers 4.51.3, bfloat16, SDPA, and batches of 12. Sampling is disabled. The archived generation configuration still contains sampling defaults, which are inactive under greedy decoding. No model weights are updated.
+
+API calls use temperature zero initially; malformed-response retries can increase temperature in increments of 0.1. One narrowly defined parser repair removes a duplicated opening quote on JSON keys while preserving values; original responses and repaired strings are retained. Missing or malformed judgments are not replaced by assumed scores. The preliminary unblinded audit is retained but not used in the reported analysis. One blinded audit incorrectly rejects an exact original/reference match, illustrating the need to inspect content rather than trust a semantic-equivalence label alone.
+
+In the exact-core follow-up, deterministic integer scoring corrects 1 conflicting API correctness labels. For instance, the archived judgment can be compared directly against the computed answer; raw labels are never overwritten in the judgment file.
+
+Numeral-only decoding permits digit tokens and end-of-sequence after the first digit, and caps output at 12 tokens. It does not force the correct answer or supply a reasoning trace. Because masking changes which next token is selected, its result is a response-channel sensitivity test, not an estimate of the isolated benefit of internal reasoning.
